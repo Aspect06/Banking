@@ -1,0 +1,14 @@
+.header {
+    background-color: rgba(128, 128, 128, 0.197);
+
+    height: 15vh;
+    width: 100%;
+
+    border-bottom: 0.2vh solid white;
+
+    .logo {
+        user-select: none;
+        height: 11vh;
+        margin-top: 1.5vh
+    }
+}

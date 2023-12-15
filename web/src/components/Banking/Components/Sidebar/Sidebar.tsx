@@ -1,9 +1,23 @@
 import styles from './Sidebar.module.scss'
+import { Accounts } from '../Accounts/Accounts'
 
-export const Sidebar: React.FC = () => {
+export const Sidebar: React.FC<{
+    accounts: any
+    setDepositModalState: any
+}> = (props) => {
     return (
         <div
             className={styles.sideBar}
-        ></div>
+        >
+            {props.accounts.map((data, index) => {
+                return (
+                    <Accounts
+                        accountName={data.name}
+                        accountBalance={data.balance}
+                        setDepositModal={props.setDepositModalState}
+                    />
+                )
+            })}
+        </div>
     )
 }

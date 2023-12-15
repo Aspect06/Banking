@@ -1,0 +1,20 @@
+.Wrapper {
+    border: 1px solid #000;
+    background-color: rgb(18, 18, 18);
+    height: 40vh;
+    width: 35vw;
+
+    .ModalHeader {
+        position: absolute;
+        font-size: 5vh;
+        color: white;
+        font-family: 'Aspect';
+        margin-left: 2vh;
+    }
+
+    .ButtonContainer {
+        float: right;
+        margin-top: 2vh;
+        margin-right: 2vh
+    }
+}

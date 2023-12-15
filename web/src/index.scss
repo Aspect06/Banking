@@ -6,6 +6,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@font-face{
+	font-family: 'Aspect';
+	src: url(../public/fonts/BebasNeueProRegular.otf)
+}
+
 body {
   overflow: hidden;
   background-color: transparent !important;

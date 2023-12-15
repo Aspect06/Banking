@@ -11,4 +11,25 @@
         height: 11vh;
         margin-top: 1.5vh
     }
+
+    .name {
+        font-family: 'Aspect';
+        float: right;
+        color: green;
+        font-size: 2vh;
+        user-select: none;
+        margin-top: 4vh;
+        margin-right: 2vh;
+    }
+
+    .balance {
+        // position: absolute;
+        font-family: 'Aspect';
+        float: right;
+        color: green;
+        font-size: 2vh;
+        user-select: none;
+        margin-right: -15vh;
+        margin-top: 7.5vh;
+    }
 }

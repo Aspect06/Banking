@@ -1,26 +1,30 @@
-.main {
-    z-index: 0;
-
+.App {
     position: absolute;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    
+    display: flex;
+    flex-direction: row;
+    
+    height: 100%;
+    width: 100%;
+    
+    z-index: 0;
 
-    .Banking {
+    .BankAppContainer {
+        position: absolute;
         overflow: hidden;
-        width: 85%;
+        
         height: 90%;
+        width: 85%;
+        
         bottom: -40%;
         left: 50%;
+        
         transform: translate(-50%, -50%);
-        position: absolute;
-        background-color: rgb(41, 41, 41);
-        border: 0.5vh solid rgb(0, 0, 0);
-        border-radius: 0.5vh;
+
+        background-color: #1f1e1f;
+        // filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.541));
 
         background-size: cover;
         background-position: center;

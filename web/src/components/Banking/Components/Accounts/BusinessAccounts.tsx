@@ -1,5 +1,7 @@
 import { Button, ButtonGroup, Typography } from '@mui/material'
-import styles from './BusinessAccounts.module.scss'
+
+import styles from './Accounts.module.scss'
+// import styles from './BusinessAccounts.module.scss'
 
 export const BusinessAccounts: React.FC<{
     accountName: string
@@ -8,33 +10,34 @@ export const BusinessAccounts: React.FC<{
 }> = (props) => {
     return (
         <div
-            className={styles.businessAccountContainer}
+            className={styles.accountCard}
         >
             <div
-                className={styles.businessAccountInformation}
+                className={styles.accountInformation}
             >
                 <Typography
-                    className={styles.businessAccountName}
+                    className={styles.accountName}
                 >
                     {props.accountName}
                 </Typography>
 
                 <Typography
-                    className={styles.businessAccountBalance}
+                    className={styles.accountBalance}
                 >
-                    {props.accountBalance}
+                    Balance: ${props.accountBalance}
                 </Typography>
             </div>
 
             <div
-                className={styles.businessAccountActions}
+                className={styles.accountActions}
             >
                 <ButtonGroup
                     variant="contained"
                     aria-label="outlined primary button group"
                 >
                     <Button
-                        className={styles.businessActionButton}
+                        variant="contained" color="success"
+                        className={styles.actionButton}
                         onClick={() => {
                             props.setDepositModal(true);
                         }}
@@ -42,12 +45,18 @@ export const BusinessAccounts: React.FC<{
                         Deposit
                     </Button>
                     <Button
-                        className={styles.businessActionButton}
+                        variant="contained" color="warning"
+                        className={styles.actionButton}
                     >
                         Withdraw
                     </Button>
                     <Button
-                        className={styles.businessActionButton}
+                        variant="contained" color="success"
+                        style={{
+                            backgroundColor: '#f0f0f0',
+                            color: 'black'
+                        }}
+                        className={styles.actionButton}
                     >
                         Transfer
                     </Button>

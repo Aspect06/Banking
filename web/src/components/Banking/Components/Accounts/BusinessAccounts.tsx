@@ -7,6 +7,8 @@ export const BusinessAccounts: React.FC<{
     accountName: string
     accountBalance: number
     setDepositModal: any
+    setWithdrawModal: any
+    setTransferModal: any
 }> = (props) => {
     return (
         <div
@@ -47,16 +49,22 @@ export const BusinessAccounts: React.FC<{
                     <Button
                         variant="contained" color="warning"
                         className={styles.actionButton}
+                        onClick={() => {
+                            props.setWithdrawModal(true);
+                        }}
                     >
                         Withdraw
                     </Button>
                     <Button
                         variant="contained" color="success"
+                        className={styles.actionButton}
                         style={{
                             backgroundColor: '#f0f0f0',
                             color: 'black'
                         }}
-                        className={styles.actionButton}
+                        onClick={() => {
+                            props.setTransferModal(true);
+                        }}
                     >
                         Transfer
                     </Button>

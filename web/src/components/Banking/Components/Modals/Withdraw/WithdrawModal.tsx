@@ -5,7 +5,7 @@ import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typog
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
-export const DepositModal: React.FC<{
+export const WithdrawModal: React.FC<{
     modalOpen: boolean;
     setModalOpen: any
 }> = (props) => {
@@ -27,7 +27,7 @@ export const DepositModal: React.FC<{
                         <Typography
                             className={styles.ModalHeader}
                         >
-                            Deposit
+                            Withdraw
                         </Typography>
 
                         <TextField
@@ -74,7 +74,8 @@ export const DepositModal: React.FC<{
                         >
                             <ButtonGroup>
                                 <Button
-                                    variant="contained" color="error"
+                                    variant="contained"
+                                    color="error"
                                     onClick={() => {
                                         props.setModalOpen(false);
                                         setAmount(0);
@@ -94,7 +95,7 @@ export const DepositModal: React.FC<{
                                         }, 1500)
                                     }}
                                 >
-                                    Deposit
+                                    Withdraw
                                 </Button>
                             </ButtonGroup>
                         </div>

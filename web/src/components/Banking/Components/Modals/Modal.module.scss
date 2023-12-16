@@ -1,8 +1,8 @@
 .Wrapper {
-    position: relative;
+    position: absolute;
     overflow: hidden;
 
-    height: fit-content;
+    min-height: 40vh;
     width: 35vw;
 
     border-radius: 0.25vh;

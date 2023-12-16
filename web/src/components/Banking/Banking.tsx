@@ -8,11 +8,15 @@ import { Slide } from "@mui/material";
 import { Sidebar } from './Components/Sidebar/Sidebar';
 import { Header } from './Components/Header/Header'; 
 import { DepositModal } from './Components/Modals/Deposit/DepositModal'; 
+import { WithdrawModal } from './Components/Modals/Withdraw/WithdrawModal';
+import { TransferModal } from './Components/Modals/Transfer/TransferModal';
 
 export const Banking: React.FC = () => {
     const [Open, setOpen] = React.useState(true);
 
     const [DepositModalOpen, setDepositModalOpen] = React.useState(false);
+    const [WithdrawModalOpen, setWithdrawModalOpen] = React.useState(false);
+    const [TransferModalOpen, setTransferModalOpen] = React.useState(false);
 
     const [CharacterData, setCharacterData] = React.useState({
         Name: 'Aspect Dev',
@@ -70,12 +74,24 @@ export const Banking: React.FC = () => {
                         accounts={CharacterData.Accounts}
                         businessaccounts={CharacterData.BusinessAccounts}
                         setDepositModalState={setDepositModalOpen}
+                        setWithdrawModalState={setWithdrawModalOpen}
+                        setTransferModalState={setTransferModalOpen}
                     />
                 </div>
 
                 <DepositModal
                     modalOpen={DepositModalOpen}
                     setModalOpen={setDepositModalOpen}
+                />
+
+                <WithdrawModal
+                    modalOpen={WithdrawModalOpen}
+                    setModalOpen={setWithdrawModalOpen}
+                />
+
+                <TransferModal
+                    modalOpen={TransferModalOpen}
+                    setModalOpen={setTransferModalOpen}
                 />
             </div>
         </Slide>

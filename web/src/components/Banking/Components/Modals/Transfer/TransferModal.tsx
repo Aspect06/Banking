@@ -5,7 +5,7 @@ import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typog
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
-export const DepositModal: React.FC<{
+export const TransferModal: React.FC<{
     modalOpen: boolean;
     setModalOpen: any
 }> = (props) => {
@@ -13,6 +13,7 @@ export const DepositModal: React.FC<{
 
     const [Amount, setAmount] = React.useState(0);
     const [Comment, setComment] = React.useState('');
+    const [stateId, setStateId] = React.useState(0);
 
     return (
         <Zoom
@@ -27,8 +28,23 @@ export const DepositModal: React.FC<{
                         <Typography
                             className={styles.ModalHeader}
                         >
-                            Deposit
+                            Transfer
                         </Typography>
+
+                        <TextField
+                            id="outlined-basic"
+                            label="StateId"
+                            variant="outlined"
+                            value={stateId}
+                            onChange={(e) => {
+                                setStateId(Number(e.target.value))
+                            }}
+                            style={{
+                                marginTop: '9vh',
+                                width: '32.5vw',
+                                left: '2vh'
+                            }}
+                        />
 
                         <TextField
                             id="outlined-basic"
@@ -39,7 +55,7 @@ export const DepositModal: React.FC<{
                                 setAmount(Number(e.target.value))
                             }}
                             style={{
-                                marginTop: '9vh',
+                                marginTop: '2vh',
                                 width: '32.5vw',
                                 left: '2vh'
                             }}
@@ -94,7 +110,7 @@ export const DepositModal: React.FC<{
                                         }, 1500)
                                     }}
                                 >
-                                    Deposit
+                                    Transfer
                                 </Button>
                             </ButtonGroup>
                         </div>

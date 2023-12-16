@@ -8,7 +8,7 @@ export const Accounts: React.FC<{
 }> = (props) => {
     return (
         <div
-            className={styles.accountContainer}
+            className={styles.accountCard}
         >
             <div
                 className={styles.accountInformation}
@@ -22,7 +22,7 @@ export const Accounts: React.FC<{
                 <Typography
                     className={styles.accountBalance}
                 >
-                    {props.accountBalance}
+                    Balance: ${props.accountBalance}
                 </Typography>
             </div>
 
@@ -34,6 +34,7 @@ export const Accounts: React.FC<{
                     aria-label="outlined primary button group"
                 >
                     <Button
+                        variant="contained" color="success"
                         className={styles.actionButton}
                         onClick={() => {
                             props.setDepositModal(true);
@@ -42,11 +43,17 @@ export const Accounts: React.FC<{
                         Deposit
                     </Button>
                     <Button
+                        variant="contained" color="warning"
                         className={styles.actionButton}
                     >
                         Withdraw
                     </Button>
                     <Button
+                        variant="contained" color="success"
+                        style={{
+                            backgroundColor: '#f0f0f0',
+                            color: 'black'
+                        }}
                         className={styles.actionButton}
                     >
                         Transfer

@@ -1,10 +1,14 @@
-.accountContainer {
-    background-color: rgb(41, 41, 41);
-    border-radius: 1vh;
+.accountCard {
+    position: relative;
+
     height: 15vh;
     width: 37.5vh;
-    margin-left: 1vh;
-    margin-top: 2vh;
+
+    background: linear-gradient(30deg, rgb(35, 69, 40) 0%, rgb(56, 113, 72) 100%); // GREEN
+    // background: linear-gradient(146deg, rgb(29, 41, 55) 0%, rgb(52, 65, 77) 100%);
+    border-radius: .5vh;
+
+    margin: 1vh;
 
     .accountInformation {
         margin-left: 1vh;
@@ -16,15 +20,35 @@
             user-select: none;
             font-size: 2.5vh;
         }
+
+        .accountBalance {
+            font-family: 'Aspect';
+            user-select: none;
+            font-size: 2vh;
+        }
     }
 
     .accountActions {
         position: absolute;
-        margin-top: 3vh;
-        margin-left: 2vh;
+        display: flex;
+
+        justify-content: center;
+        
+        left: 0;
+        right: 0;
+
+        bottom: 0;
+
+        padding: 1vh;
+        
+        margin-left: auto;
+        margin-right: auto;
+    
+        align-items: center;
+        text-align: center;
     
         .actionButton {
-            width: 11vh
+            width: 12vh
         }
     }
 }

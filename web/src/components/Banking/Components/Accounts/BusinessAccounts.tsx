@@ -11,6 +11,8 @@ export const BusinessAccounts: React.FC<{
     setWithdrawModal: any
     setTransferModal: any
     selectedAccount: any
+    CharacterData: any
+    setCharacterData: any
 }> = (props) => {
     return (
         <div
@@ -19,9 +21,14 @@ export const BusinessAccounts: React.FC<{
                 border: props.accountId == props.selectedAccount ? '2px solid #fff' : ''
             }}
             onClick={() => {
-                console.log(props.selectedAccount)
-                console.log(props.accountId)
-                props.selectedAccount = props.accountId
+                props.setCharacterData({
+                    Name: props.CharacterData.Name,
+                    StateId: props.CharacterData.StateId,
+                    Cash: props.CharacterData.Cash,
+                    selectedAccount: props.accountId,
+                    Accounts: props.CharacterData.Accounts,
+                    BusinessAccounts: props.CharacterData.BusinessAccounts
+                })
             }}
         >
             <div

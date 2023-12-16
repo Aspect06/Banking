@@ -14,6 +14,8 @@ export const Sidebar: React.FC<{
     setDepositModalState: any
     setWithdrawModalState: any
     setTransferModalState: any
+    CharacterData: any
+    setCharacterData: any
 }> = (props) => {
     return (
         <div
@@ -39,6 +41,8 @@ export const Sidebar: React.FC<{
                         setWithdrawModal={props.setWithdrawModalState}
                         setTransferModal={props.setTransferModalState}
                         selectedAccount={props.selectedAccount}
+                        CharacterData={props.CharacterData}
+                        setCharacterData={props.setCharacterData}
                     />
                 )
             })}
@@ -65,6 +69,8 @@ export const Sidebar: React.FC<{
                         setWithdrawModal={props.setWithdrawModalState}
                         setTransferModal={props.setTransferModalState}
                         selectedAccount={props.selectedAccount}
+                        CharacterData={props.CharacterData}
+                        setCharacterData={props.setCharacterData}
                     />
                 )
             })}

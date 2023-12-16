@@ -84,6 +84,8 @@ export const Banking: React.FC = () => {
                         setDepositModalState={setDepositModalOpen}
                         setWithdrawModalState={setWithdrawModalOpen}
                         setTransferModalState={setTransferModalOpen}
+                        CharacterData={CharacterData}
+                        setCharacterData={setCharacterData}
                     />
                 </div>
 

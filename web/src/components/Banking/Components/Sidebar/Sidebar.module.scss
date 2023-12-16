@@ -18,8 +18,6 @@
 
     margin-top: 2vh;
     margin-left: 1.1vh;
-
-    background: linear-gradient(30deg, rgb(56, 113, 72) 0%, rgb(41, 82, 47) 100%);
     border-radius: .5vh;
 
     font-family: 'Aspect';
@@ -28,7 +26,7 @@
 
     padding: 1vh;
 
-    // text-decoration: underline;
+    text-decoration: underline;
     text-shadow: 2px 2px 3px black;
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.283));
 }

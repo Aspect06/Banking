@@ -7,6 +7,13 @@
     border-bottom: .5vh solid green;
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.466));
 
+    .logo {
+        user-select: none;
+        height: 7.5vh;
+        margin-top: 2vh;
+        margin-left: 2vh;
+    }
+
     .CharacterName {
         position: relative;
         float: right;

@@ -1,5 +1,6 @@
 import styles from './Header.module.scss'
 import { Typography } from '@mui/material'
+import Logo from '../../../../assets/images/logo.png'
 
 export const Header: React.FC<{
     name: string
@@ -9,6 +10,10 @@ export const Header: React.FC<{
         <div
             className={styles.header}
         >
+            <img
+                className={styles.logo}
+                src={Logo}
+            />
 
             <Typography
                 className={styles.CharacterName}

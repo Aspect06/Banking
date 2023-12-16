@@ -5,13 +5,12 @@
     height: fit-content;
     width: 35vw;
 
-    border-radius: 1vh;
+    border-radius: 0.25vh;
 
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.636));
     backdrop-filter: blur(5px);
 
-    /* Your background gradient */
-    background: linear-gradient(30deg, rgb(35, 69, 40) 0%, rgb(56, 113, 72) 100%);
+    background-color: rgb(18, 18, 18);
 
     .ModalHeader {
         position: absolute;

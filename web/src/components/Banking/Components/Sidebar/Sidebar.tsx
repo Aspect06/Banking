@@ -2,7 +2,7 @@ import styles from './Sidebar.module.scss'
 import '../Accounts/BusinessAccounts.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { Accounts } from '../Accounts/Accounts'
 import { BusinessAccounts } from '../Accounts/BusinessAccounts'
@@ -22,7 +22,8 @@ export const Sidebar: React.FC<{
                     style={{
                         paddingRight: '.5vh'
                     }}
-                /> Personal Accounts
+                />
+                Personal Accounts
             </div>
 
             {props.accounts.map((data, index) => {
@@ -35,9 +36,17 @@ export const Sidebar: React.FC<{
                 )
             })}
 
-            <div className={styles.accountsCategoryHeader}>
-                Business Accounts
-            </div>
+            {props.businessaccounts.length > 1 &&
+                <div className={styles.accountsCategoryHeader}>
+                    <FontAwesomeIcon 
+                        icon={faBriefcase}
+                        style={{
+                            paddingRight: '.5vh'
+                        }}
+                    />
+                    Business Accounts
+                </div>
+            }
             
             {props.businessaccounts.map((data, index) => {
                 return (

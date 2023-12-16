@@ -4,15 +4,25 @@ import styles from './Accounts.module.scss'
 // import styles from './BusinessAccounts.module.scss'
 
 export const BusinessAccounts: React.FC<{
+    accountId: any
     accountName: string
     accountBalance: number
     setDepositModal: any
     setWithdrawModal: any
     setTransferModal: any
+    selectedAccount: any
 }> = (props) => {
     return (
         <div
             className={styles.accountCard}
+            style={{
+                border: props.accountId == props.selectedAccount ? '2px solid #fff' : ''
+            }}
+            onClick={() => {
+                console.log(props.selectedAccount)
+                console.log(props.accountId)
+                props.selectedAccount = props.accountId
+            }}
         >
             <div
                 className={styles.accountInformation}

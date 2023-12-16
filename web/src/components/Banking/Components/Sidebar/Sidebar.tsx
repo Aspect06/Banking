@@ -10,6 +10,7 @@ import { BusinessAccounts } from '../Accounts/BusinessAccounts'
 export const Sidebar: React.FC<{
     accounts: any
     businessaccounts: any
+    selectedAccount: any
     setDepositModalState: any
     setWithdrawModalState: any
     setTransferModalState: any
@@ -31,11 +32,13 @@ export const Sidebar: React.FC<{
             {props.accounts.map((data, index) => {
                 return (
                     <Accounts
+                        accountId={data.accountId}
                         accountName={data.name}
                         accountBalance={data.balance}
                         setDepositModal={props.setDepositModalState}
                         setWithdrawModal={props.setWithdrawModalState}
                         setTransferModal={props.setTransferModalState}
+                        selectedAccount={props.selectedAccount}
                     />
                 )
             })}
@@ -55,11 +58,13 @@ export const Sidebar: React.FC<{
             {props.businessaccounts.map((data, index) => {
                 return (
                     <BusinessAccounts
+                        accountId={data.accountId}
                         accountName={data.name}
                         accountBalance={data.balance}
                         setDepositModal={props.setDepositModalState}
                         setWithdrawModal={props.setWithdrawModalState}
                         setTransferModal={props.setTransferModalState}
+                        selectedAccount={props.selectedAccount}
                     />
                 )
             })}

@@ -22,30 +22,37 @@ export const Banking: React.FC = () => {
         Name: 'Aspect Dev',
         StateId: 1,
         Cash: 250,
+        selectedAccount: 1,
         Accounts: [
             {
+                accountId: 1,
                 name: 'Aspect Dev',
                 balance: 25000
             },
             {
+                accountId: 2,
                 name: '2k Dev',
                 balance: 25000
             },
         ],
         BusinessAccounts: [
             {
+                accountId: 3,
                 name: 'Los Santos Police Department',
                 balance: 250000
             },
             {
+                accountId: 4,
                 name: 'Blaine County Sheriffs Office',
                 balance: 250000
             },
             {
+                accountId: 5,
                 name: 'San Andreas State Police',
                 balance: 250000
             },
             {
+                accountId: 6,
                 name: 'San Andreas State Park Rangers',
                 balance: 250000
             },
@@ -73,6 +80,7 @@ export const Banking: React.FC = () => {
                     <Sidebar
                         accounts={CharacterData.Accounts}
                         businessaccounts={CharacterData.BusinessAccounts}
+                        selectedAccount={CharacterData.selectedAccount}
                         setDepositModalState={setDepositModalOpen}
                         setWithdrawModalState={setWithdrawModalOpen}
                         setTransferModalState={setTransferModalOpen}

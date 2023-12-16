@@ -2,15 +2,23 @@ import { Button, ButtonGroup, Typography } from '@mui/material'
 import styles from './Accounts.module.scss'
 
 export const Accounts: React.FC<{
+    accountId: any
     accountName: string
     accountBalance: number
     setDepositModal: any
     setWithdrawModal: any
     setTransferModal: any
+    selectedAccount: any
 }> = (props) => {
     return (
         <div
             className={styles.accountCard}
+            style={{
+                border: props.accountId == props.selectedAccount ? '2px solid #fff' : ''
+            }}
+            onClick={() => {
+                props.selectedAccount = props.accountId
+            }}
         >
             <div
                 className={styles.accountInformation}

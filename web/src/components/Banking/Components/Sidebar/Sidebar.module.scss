@@ -1,7 +1,40 @@
-.sideBar {
-    background-color: rgba(128, 128, 128, 0.197);
+.Sidebar {
+    position: relative;
+
     width: 40vh;
     height: 83%;
 
+    background-color: #1f1e1f;
+
     overflow-y: scroll;
+}
+
+.personalAccountsHeader {
+    justify-content: center;
+    width: fit-content;
+
+    margin-top: 2vh;
+    margin-left: 1.5vh;
+
+    font-family: 'Aspect';
+    font-size: 3vh;
+    color: #f4f4f4;
+
+    text-align: center;
+    // border-bottom: 1px solid green;
+}
+
+.businessAccountsHeader {
+    justify-content: center;
+    width: fit-content;
+
+    margin-top: 2vh;
+    margin-left: 1.5vh;
+
+    font-family: 'Aspect';
+    font-size: 3vh;
+    color: #f4f4f4;
+
+    text-align: center;
+    // border-bottom: 1px solid green;
 }

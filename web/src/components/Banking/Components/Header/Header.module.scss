@@ -1,35 +1,41 @@
 .header {
-    background-color: #1f1e1f;
+    // background-color: #1f1e1f;
 
-    height: 15vh;
+    height: 12vh;
     width: 100%;
 
-    border-bottom: .1vh solid green;
+    border-bottom: .5vh solid green;
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.466));
 
-    .logo {
-        user-select: none;
-        height: 11vh;
-        margin-top: 1.5vh
-    }
-
-    .name {
-        font-family: 'Aspect';
+    .CharacterName {
+        position: relative;
         float: right;
-        color: green;
-        font-size: 2vh;
-        user-select: none;
-        margin-top: 4vh;
-        margin-right: 2vh;
+        
+        top: 2.5vh;
+
+        // line-height: 9vh;
+        font-family: 'Aspect';
+        font-size: 3vh;
+        color: white;
+    
+        width: fit-content;
+
+        right: 2vh;
     }
 
     .balance {
-        // position: absolute;
-        font-family: 'Aspect';
+        position: absolute;
         float: right;
-        color: green;
+        
+        top: 6vh;
+
+        // line-height: 16vh;
+        font-family: 'Aspect';
         font-size: 2vh;
-        user-select: none;
-        margin-right: -15vh;
-        margin-top: 7.5vh;
+        color: rgb(204, 204, 204);
+    
+        width: fit-content;
+
+        right: 2vh;
     }
 }

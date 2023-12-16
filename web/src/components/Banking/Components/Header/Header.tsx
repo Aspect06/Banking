@@ -1,5 +1,4 @@
 import styles from './Header.module.scss'
-import Logo from '../../../../assets/images/logo.png'
 import { Typography } from '@mui/material'
 
 export const Header: React.FC<{
@@ -10,21 +9,19 @@ export const Header: React.FC<{
         <div
             className={styles.header}
         >
-            <img
-                className={styles.logo}
-                src={Logo}
-            />
 
             <Typography
-                className={styles.name}
+                className={styles.CharacterName}
             >
-                Welcome back {props.name}
+                Welcome back, {props.name}.
             </Typography>
 
             <Typography
                 className={styles.balance}
             >
-                (${props.cash})
+                You currently have <span style={{
+                    color: 'green'
+                }}>${props.cash}.</span>
             </Typography>
         </div>
     )

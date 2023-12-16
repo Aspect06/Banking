@@ -1,6 +1,9 @@
 import styles from './Sidebar.module.scss'
 import '../Accounts/BusinessAccounts.module.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+
 import { Accounts } from '../Accounts/Accounts'
 import { BusinessAccounts } from '../Accounts/BusinessAccounts'
 
@@ -13,8 +16,13 @@ export const Sidebar: React.FC<{
         <div
             className={styles.Sidebar}
         >
-            <div className={styles.personalAccountsHeader}>
-                Personal Accounts
+            <div className={styles.accountsCategoryHeader}>
+                <FontAwesomeIcon 
+                    icon={faInfoCircle}
+                    style={{
+                        paddingRight: '.5vh'
+                    }}
+                /> Personal Accounts
             </div>
 
             {props.accounts.map((data, index) => {
@@ -27,7 +35,7 @@ export const Sidebar: React.FC<{
                 )
             })}
 
-            <div className={styles.businessAccountsHeader}>
+            <div className={styles.accountsCategoryHeader}>
                 Business Accounts
             </div>
             

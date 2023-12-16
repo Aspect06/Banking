@@ -1,11 +1,17 @@
 .Wrapper {
+    position: relative;
+    overflow: hidden;
+
     height: fit-content;
     width: 35vw;
 
-    background-color: #0A0D10;
     border-radius: 1vh;
-    
-    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.611));
+
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.636));
+    backdrop-filter: blur(5px);
+
+    /* Your background gradient */
+    background: linear-gradient(30deg, rgb(35, 69, 40) 0%, rgb(56, 113, 72) 100%);
 
     .ModalHeader {
         position: absolute;

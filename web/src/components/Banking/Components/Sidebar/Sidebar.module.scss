@@ -11,34 +11,24 @@
     overflow-y: scroll;
 }
 
-.personalAccountsHeader {
-    justify-content: center;
-    width: fit-content;
+.accountsCategoryHeader {
+    position: relative;
 
-    margin-top: .65vh;
-    margin-left: 1.1vh;
-
-    font-family: 'Aspect';
-    font-size: 3vh;
-    color: #f4f4f4;
-
-    text-align: center;
-    text-decoration: underline;
-    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.283));
-}
-
-.businessAccountsHeader {
-    justify-content: center;
-    width: fit-content;
+    width: 37.4vh;
 
     margin-top: 2vh;
     margin-left: 1.1vh;
 
+    background: linear-gradient(30deg, rgb(56, 113, 72) 0%, rgb(41, 82, 47) 100%);
+    border-radius: .5vh;
+
     font-family: 'Aspect';
     font-size: 3vh;
     color: #f4f4f4;
 
-    text-align: center;
-    text-decoration: underline;
+    padding: 1vh;
+
+    // text-decoration: underline;
+    text-shadow: 2px 2px 3px black;
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.283));
 }

@@ -2,9 +2,11 @@
     position: relative;
 
     width: 40vh;
-    height: 82%;
+    height: 85.5%;
 
-    background-color: #1f1e1f;
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.427));
+
+    // background-color: #1f1e1f;
 
     overflow-y: scroll;
 }
@@ -13,8 +15,8 @@
     justify-content: center;
     width: fit-content;
 
-    margin-top: 2vh;
-    margin-left: 1.5vh;
+    margin-top: .65vh;
+    margin-left: 1.1vh;
 
     font-family: 'Aspect';
     font-size: 3vh;
@@ -22,7 +24,7 @@
 
     text-align: center;
     text-decoration: underline;
-    // border-bottom: 1px solid green;
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.283));
 }
 
 .businessAccountsHeader {
@@ -30,7 +32,7 @@
     width: fit-content;
 
     margin-top: 2vh;
-    margin-left: 1.5vh;
+    margin-left: 1.1vh;
 
     font-family: 'Aspect';
     font-size: 3vh;
@@ -38,5 +40,5 @@
 
     text-align: center;
     text-decoration: underline;
-    // border-bottom: 1px solid green;
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.283));
 }

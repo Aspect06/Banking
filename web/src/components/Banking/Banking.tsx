@@ -23,6 +23,10 @@ export const Banking: React.FC = () => {
                 name: 'Aspect Dev',
                 balance: 25000
             },
+            {
+                name: '2k Dev',
+                balance: 25000
+            },
         ],
         BusinessAccounts: [
             {

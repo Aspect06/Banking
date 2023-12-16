@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './DepositModal.module.scss'
-import { Button, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
+import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +17,7 @@ export const DepositModal: React.FC<{
     return (
         <Zoom
             in={props.modalOpen}
-            timeout={750}
+            timeout={320}
         >
             <div
                 className={styles.Wrapper}
@@ -39,7 +39,7 @@ export const DepositModal: React.FC<{
                                 setAmount(Number(e.target.value))
                             }}
                             style={{
-                                marginTop: '10vh',
+                                marginTop: '9vh',
                                 width: '32.5vw',
                                 left: '2vh'
                             }}
@@ -72,21 +72,23 @@ export const DepositModal: React.FC<{
                         <div
                             className={styles.ButtonContainer}
                         >
-                            <Button
-                                color={'error'}
-                                onClick={() => {
-                                    props.setModalOpen(false);
-                                    setAmount(0);
-                                    setComment('');
-                                }}
-                            >
-                                Cancel
-                            </Button>
-                            <Button
-                                color={'success'}
-                            >
-                                Deposit
-                            </Button>
+                            <ButtonGroup>
+                                <Button
+                                    variant="contained" color="error"
+                                    onClick={() => {
+                                        props.setModalOpen(false);
+                                        setAmount(0);
+                                        setComment('');
+                                    }}
+                                >
+                                    Cancel
+                                </Button>
+                                <Button
+                                    variant="contained" color="success"
+                                >
+                                    Deposit
+                                </Button>
+                            </ButtonGroup>
                         </div>
                     </>
                 }

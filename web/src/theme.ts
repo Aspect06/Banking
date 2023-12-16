@@ -12,7 +12,7 @@ export const theme = createTheme({
             contrastText: "#BFBFCB"
         },
 
-        lightgray: createColor("#BFBFCB")
+        white: createColor("#f0f0f0")
     },
 
     components: {

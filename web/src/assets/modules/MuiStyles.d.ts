@@ -6,6 +6,6 @@ import {
     interface PaletteOptions {
       navy: PaletteColorOptions;
       gray: PaletteColorOptions;
-      lightgray: PaletteColorOptions;
+      white: PaletteColorOptions;
     }
   }

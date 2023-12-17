@@ -20,50 +20,54 @@ export const Sidebar: React.FC<{
     setCharacterData: any
 }> = (props) => {
     return (
-        <div
-            className={styles.Sidebar}
-        >
-            <Tooltip
-                title={'Create Savings Account'}
-                placement={'right'}
-                arrow
-            >
-                <div
-                    style={{
-                        position: 'fixed',
-                        display: 'flex',
-                        right: '2vh',
-                        zIndex: '1',
-                        bottom: '3vh'
-                    }}
+        <>
+            <div>
+                <Tooltip
+                    title={'Create Savings Account'}
+                    placement={'right'}
+                    arrow
                 >
-                    <Fab
-                        color="success"
-                        aria-label="add"
-                        onClick={() => props.setAccountCreationModalState(true)}
+                    <div
+                        style={{
+                            position: 'fixed',
+                            display: 'flex',
+                            marginLeft: '32.5vh',
+                            zIndex: '1',
+                            bottom: '3vh'
+                        }}
                     >
-                        <AddIcon />
-                    </Fab>
-                </div>
-            </Tooltip>
+                        <Fab
+                            color="success"
+                            aria-label="add"
+                            onClick={() => props.setAccountCreationModalState(true)}
+                        >
+                            <AddIcon />
+                        </Fab>
+                    </div>
+                </Tooltip>
+            </div>
 
-            {props.accounts.map((data, index) => {
-                return (
-                    <Accounts
-                        key={index}
-                        accountId={data.accountId}
-                        accountType={data.accountType}
-                        accountName={data.name}
-                        accountBalance={data.balance}
-                        setDepositModal={props.setDepositModalState}
-                        setWithdrawModal={props.setWithdrawModalState}
-                        setTransferModal={props.setTransferModalState}
-                        selectedAccount={props.selectedAccount}
-                        CharacterData={props.CharacterData}
-                        setCharacterData={props.setCharacterData}
-                    />
-                )
-            })}
-        </div>
+            <div
+                className={styles.Sidebar}
+            >
+                {props.accounts.map((data, index) => {
+                    return (
+                        <Accounts
+                            key={index}
+                            accountId={data.accountId}
+                            accountType={data.accountType}
+                            accountName={data.name}
+                            accountBalance={data.balance}
+                            setDepositModal={props.setDepositModalState}
+                            setWithdrawModal={props.setWithdrawModalState}
+                            setTransferModal={props.setTransferModalState}
+                            selectedAccount={props.selectedAccount}
+                            CharacterData={props.CharacterData}
+                            setCharacterData={props.setCharacterData}
+                        />
+                    )
+                })}
+            </div>
+        </>
     )
 }

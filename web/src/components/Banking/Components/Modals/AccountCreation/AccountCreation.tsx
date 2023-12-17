@@ -85,7 +85,7 @@ export const AccountCreation: React.FC<{
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginTop: '3%'
+                            marginTop: '3.5%'
                         }}
                     >
                         <div>

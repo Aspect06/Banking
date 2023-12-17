@@ -1,8 +1,7 @@
 import { Button, ButtonGroup, Typography } from '@mui/material'
+import styles from './Accounts.module.scss'
 
-import styles from '../Accounts.module.scss'
-
-export const BusinessAccounts: React.FC<{
+export const Accounts: React.FC<{
     accountId: any
     accountName: string
     accountBalance: number
@@ -27,7 +26,6 @@ export const BusinessAccounts: React.FC<{
                     Cash: props.CharacterData.Cash,
                     selectedAccount: props.accountId,
                     Accounts: props.CharacterData.Accounts,
-                    BusinessAccounts: props.CharacterData.BusinessAccounts
                 })
             }}
         >
@@ -59,6 +57,7 @@ export const BusinessAccounts: React.FC<{
                 <ButtonGroup
                     variant="contained"
                     aria-label="outlined primary button group"
+                    size="small"
                 >
                     <Button
                         variant="contained" color="success"
@@ -71,7 +70,8 @@ export const BusinessAccounts: React.FC<{
                         Deposit
                     </Button>
                     <Button
-                        variant="contained" color="warning"
+                        variant="contained"
+                        color="warning"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
                         onClick={() => {
@@ -82,9 +82,9 @@ export const BusinessAccounts: React.FC<{
                     </Button>
                     <Button
                         variant="contained"
+                        color={"white"}
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
-                        color={'white'}
                         onClick={() => {
                             props.setTransferModal(true);
                         }}

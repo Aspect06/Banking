@@ -21,7 +21,7 @@ export const Sidebar: React.FC<{
         <div
             className={styles.Sidebar}
         >
-            <Button
+            {/* <Button
                 variant="contained" color="success"
                 className={styles.actionButton}
                 onClick={() => props.setAccountCreationModalState(true)}
@@ -32,7 +32,7 @@ export const Sidebar: React.FC<{
                 }}
             >
                 Create Account
-            </Button>
+            </Button> */}
             
             {props.accounts.map((data, index) => {
                 return (

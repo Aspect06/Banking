@@ -41,14 +41,14 @@ export const Banking: React.FC = () => {
         BusinessAccounts: [
             {
                 accountId: 5,
-                accountType: 'Business Account Example',
-                name: 'Snr. Buns',
+                accountType: 'Business Account',
+                name: 'Business Account Example',
                 balance: 65000
             },
             {
                 accountId: 6,
-                accountType: 'Government Fund Example',
-                name: 'Blaine County Sheriffs Office',
+                accountType: 'Government Fund',
+                name: 'Government Fund Example',
                 balance: 250000
             },
         ]

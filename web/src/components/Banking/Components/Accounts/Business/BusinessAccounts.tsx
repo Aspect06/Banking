@@ -80,7 +80,7 @@ export const BusinessAccounts: React.FC<{
                         Withdraw
                     </Button>
                     <Button
-                        variant="contained" color="success"
+                        variant="contained"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
                         color={'white'}

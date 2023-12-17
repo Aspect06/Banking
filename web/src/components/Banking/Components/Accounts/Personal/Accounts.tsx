@@ -69,7 +69,8 @@ export const Accounts: React.FC<{
                         Deposit
                     </Button>
                     <Button
-                        variant="contained" color="warning"
+                        variant="contained"
+                        color="warning"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
                         onClick={() => {
@@ -79,10 +80,10 @@ export const Accounts: React.FC<{
                         Withdraw
                     </Button>
                     <Button
-                        variant="contained" color="success"
+                        variant="contained"
+                        color={"white"}
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
-                        color={'white'}
                         onClick={() => {
                             props.setTransferModal(true);
                         }}

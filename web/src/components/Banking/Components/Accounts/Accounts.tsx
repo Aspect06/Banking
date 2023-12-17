@@ -39,28 +39,16 @@ export const Accounts: React.FC<{
                         fontSize: '18px',
                         padding: '0 0 0',
                         color: 'grey'
-                    }}> ${props.accountBalance} </span>
+                    }}> #{props.accountId} </span>
 
 
 
                     {/* ACCOUNT TYPE SECTION */}
 
-                    <div style={{
-                        position: 'relative',
-                        display: 'flex',
-
-                        flexDirection: 'column',
-                        fontSize: '18px',
-
-                        bottom: '0',
-                    }}>
-                        Account Type
-                    </div>
-
                     <span>
                         <span style={{
                             position: 'relative',
-                            
+
                             display: 'flex',
                             flexDirection: 'column',
 
@@ -70,8 +58,15 @@ export const Accounts: React.FC<{
                                 fontSize: '18px',
                                 padding: '0 0 0',
                                 color: 'grey'
-                            }}> 
-                                {props.accountType}
+                            }}>
+                                Balance: ${props.accountBalance}
+                            </span>
+                            <span style={{
+                                fontSize: '16px',
+                                padding: '0 0 0',
+                                color: 'grey'
+                            }}>
+                                {props.accountType} Account
                             </span>
                         </span>
                     </span>
@@ -98,6 +93,7 @@ export const Accounts: React.FC<{
                     >
                         Deposit
                     </Button>
+
                     <Button
                         variant="contained"
                         color="warning"
@@ -112,6 +108,7 @@ export const Accounts: React.FC<{
                     >
                         Withdraw
                     </Button>
+
                     <Button
                         variant="contained"
                         className={styles.actionButton}

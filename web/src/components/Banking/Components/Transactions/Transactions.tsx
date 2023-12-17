@@ -9,28 +9,53 @@ export const Transactions: React.FC = () => {
 
     const [PlaceholderTransactions, setPlaceholderTransactions] = React.useState([
         {
-            Account: 'Personal'
-        }
+            Account: 'Personal',
+            Amount: 100,
+            Comment: 'Money or something...'
+        },
+        {
+            Account: 'Personal',
+            Amount: 100,
+            Comment: 'Something or money...'
+        },
     ])
+
+    const [LoadedTransactions, setLoadedTransactions] = React.useState(0);
+    const [TransactionsLoad, setTransactionsToLoad] = React.useState(25)
 
     return (
         <div
             className={styles.transcationsContainer}
         >
-            {PlaceholderTransactions.map((data, index) => {
-                return (
-                    <TransactionsItem
-                        Transaction={data}
-                    />
-                )
+            <div
+                className={styles.transactionHeader}
+            >
+                Transactions
+            </div>
+
+            {PlaceholderTransactions.map((data) => {
+                // console.log(LoadedTransactions)
+                // console.log(TransactionsLoad)
+                // setLoadedTransactions(LoadedTransactions + 1)
+                if (LoadedTransactions < TransactionsLoad) {
+                    return (
+                        <TransactionsItem
+                            Transaction={data}
+                            setLoadedTransactions={setLoadedTransactions}
+                        />
+                    )
+                }
             })}
 
-            <Button
-                className={styles.moreButton}
-                variant={'contained'}
-            >
-                Show More
-            </Button>
+            {PlaceholderTransactions.length > TransactionsLoad &&
+                <Button
+                    className={styles.moreButton}
+                    variant={'contained'}
+                    onClick={() => setTransactionsToLoad(TransactionsLoad + 25)}
+                >
+                    Show More
+                </Button>
+            }
         </div>
     )
 }

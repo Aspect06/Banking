@@ -1,11 +1,10 @@
 import styles from './Sidebar.module.scss'
-import '../Accounts/BusinessAccounts.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { Accounts } from '../Accounts/Accounts'
-import { BusinessAccounts } from '../Accounts/BusinessAccounts'
+import { Accounts } from '../Accounts/Personal/Accounts'
+import { BusinessAccounts } from '../Accounts/Business/BusinessAccounts'
 
 export const Sidebar: React.FC<{
     accounts: any

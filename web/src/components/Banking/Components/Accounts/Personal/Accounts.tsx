@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Typography } from '@mui/material'
-import styles from './Accounts.module.scss'
+import styles from '../Accounts.module.scss'
 
 export const Accounts: React.FC<{
     accountId: any

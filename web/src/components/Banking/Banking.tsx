@@ -3,7 +3,7 @@ import React from 'react';
 import styles from "./Banking.module.scss";
 import "./Components/Scroll.module.scss"
 
-import { Slide } from "@mui/material";
+import { Zoom } from "@mui/material";
 
 import { Sidebar } from './Components/Sidebar/Sidebar';
 import { Header } from './Components/Header/Header'; 
@@ -61,9 +61,9 @@ export const Banking: React.FC = () => {
     })
 
     return (
-        <Slide
-            direction="up"
+        <Zoom
             in={Open}
+            timeout={750}
             unmountOnExit
             mountOnEnter
         >
@@ -107,6 +107,6 @@ export const Banking: React.FC = () => {
                     setModalOpen={setTransferModalOpen}
                 />
             </div>
-        </Slide>
+        </Zoom>
     )
 }

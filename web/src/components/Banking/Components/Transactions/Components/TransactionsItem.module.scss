@@ -1,5 +1,5 @@
 .transactionsItem {
-    height: 25%;
+    height: 20%;
     width: 99%;
 
     margin-left: 0.5%;
@@ -16,6 +16,14 @@
         .splitter {
             margin-top: 1vh;
             border-bottom: 0.1vh solid #fff;
+        }
+
+        .Comment {
+            position: absolute;
+            font-family: 'AspectDevelopment';
+            font-size: 1.5vh;
+            left: 1.5vh;
+            margin-top: 2vh
         }
     }
 }

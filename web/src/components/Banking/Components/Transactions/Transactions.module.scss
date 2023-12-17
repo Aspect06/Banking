@@ -4,9 +4,16 @@
     top: 17.5vh;
     height: 76.4%;
     width: 110vh;
-    left: 54vh;
+    right: 14vh;
 
     overflow-y: scroll;
+
+    .transactionHeader {
+        font-family: 'AspectDev';
+        color: white;
+        font-size: 3vh;
+        margin-left: 0.5vh;
+    }
 
     .moreButton {
         top: 2vh;

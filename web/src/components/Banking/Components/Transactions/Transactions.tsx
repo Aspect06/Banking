@@ -8,26 +8,38 @@ import { Button, CircularProgress } from '@mui/material'
 export const Transactions: React.FC = () => {
     const [Loading, setLoading] = React.useState(false);
     const [PlaceholderTransactions, setPlaceholderTransactions] = React.useState([
-        {
-            Account: 'Personal',
-            Amount: 100,
-            Comment: 'Money or something...'
-        },
-        {
-            Account: 'Personal',
-            Amount: 100,
-            Comment: 'Something or money...'
-        },
-        {
-            Account: 'Personal',
-            Amount: 100,
-            Comment: 'Something or money...'
-        },
-        {
-            Account: 'Personal',
-            Amount: 100,
-            Comment: 'Something or money...'
-        },
+        {Account: 'Personal', Amount: 100, Comment: 'Hi...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
+        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii'},
     ]);
 
     const [TransactionsToLoad, setTransactionsToLoad] = React.useState(25);

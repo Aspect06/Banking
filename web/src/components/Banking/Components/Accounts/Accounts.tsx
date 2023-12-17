@@ -57,7 +57,6 @@ export const Accounts: React.FC<{
                 <ButtonGroup
                     variant="contained"
                     aria-label="outlined primary button group"
-                    size="small"
                 >
                     <Button
                         variant="contained" color="success"
@@ -65,6 +64,11 @@ export const Accounts: React.FC<{
                         disabled={props.accountId != props.selectedAccount}
                         onClick={() => {
                             props.setDepositModal(true);
+                        }}
+                        style={{
+                            height: '3.25vh',
+                            width: '12vh',
+                            fontSize: '1.25vh'
                         }}
                     >
                         Deposit
@@ -77,6 +81,11 @@ export const Accounts: React.FC<{
                         onClick={() => {
                             props.setWithdrawModal(true);
                         }}
+                        style={{
+                            height: '3.25vh',
+                            width: '12vh',
+                            fontSize: '1.25vh'
+                        }}
                     >
                         Withdraw
                     </Button>
@@ -87,6 +96,11 @@ export const Accounts: React.FC<{
                         disabled={props.accountId != props.selectedAccount}
                         onClick={() => {
                             props.setTransferModal(true);
+                        }}
+                        style={{
+                            height: '3.25vh',
+                            width: '12vh',
+                            fontSize: '1.25vh'
                         }}
                     >
                         Transfer

@@ -94,7 +94,7 @@ export const Transactions: React.FC = () => {
                         <Button
                             className={styles.moreButton}
                             variant={'contained'}
-                            onClick={() => setTransactionsToLoad(TransactionsToLoad + 25)}
+                            onClick={() => setTransactionsToLoad(TransactionsToLoad + 5)}
                         >
                             Show More
                         </Button>

@@ -91,6 +91,7 @@ export const WithdrawModal: React.FC<{
                                         setLoading(true);
 
                                         setTimeout(() => {
+                                            props.setModalOpen(false);
                                             setLoading(false);
                                         }, 1500)
                                     }}

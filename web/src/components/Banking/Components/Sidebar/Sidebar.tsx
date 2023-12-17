@@ -24,6 +24,7 @@ export const Sidebar: React.FC<{
                 return (
                     <Accounts
                         accountId={data.accountId}
+                        accountType={data.accountType}
                         accountName={data.name}
                         accountBalance={data.balance}
                         setDepositModal={props.setDepositModalState}
@@ -40,6 +41,7 @@ export const Sidebar: React.FC<{
                 return (
                     <BusinessAccounts
                         accountId={data.accountId}
+                        accountType={data.accountType}
                         accountName={data.name}
                         accountBalance={data.balance}
                         setDepositModal={props.setDepositModalState}

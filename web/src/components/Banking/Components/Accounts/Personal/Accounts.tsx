@@ -11,6 +11,7 @@ export const Accounts: React.FC<{
     selectedAccount: any
     CharacterData: any
     setCharacterData: any
+    accountType: any
 }> = (props) => {
     return (
         <div
@@ -47,7 +48,7 @@ export const Accounts: React.FC<{
                 <Typography
                     className={styles.accountType}
                 >
-                    Personal Account
+                    {props.accountType}
                 </Typography>
             </div>
 

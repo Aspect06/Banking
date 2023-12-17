@@ -12,6 +12,7 @@ export const BusinessAccounts: React.FC<{
     selectedAccount: any
     CharacterData: any
     setCharacterData: any
+    accountType: any
 }> = (props) => {
     return (
         <div
@@ -48,7 +49,7 @@ export const BusinessAccounts: React.FC<{
                 <Typography
                     className={styles.accountType}
                 >
-                    Business Account
+                    {props.accountType}
                 </Typography>
             </div>
 

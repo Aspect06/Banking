@@ -32,23 +32,50 @@ export const Accounts: React.FC<{
             <div
                 className={styles.accountInformation}
             >
-                <Typography
+                <span
                     className={styles.accountName}
                 >
-                    {props.accountName}
-                </Typography>
+                    {props.accountName} | <span style={{
+                        fontSize: '18px',
+                        padding: '0 0 0',
+                        color: 'grey'
+                    }}> ${props.accountBalance} </span>
 
-                <Typography
-                    className={styles.accountBalance}
-                >
-                    Balance: ${props.accountBalance}
-                </Typography>
 
-                <Typography
-                    className={styles.accountType}
-                >
-                    {props.accountType}
-                </Typography>
+
+                    {/* ACCOUNT TYPE SECTION */}
+
+                    <div style={{
+                        position: 'relative',
+                        display: 'flex',
+
+                        flexDirection: 'column',
+                        fontSize: '18px',
+
+                        bottom: '0',
+                    }}>
+                        Account Type
+                    </div>
+
+                    <span>
+                        <span style={{
+                            position: 'relative',
+                            
+                            display: 'flex',
+                            flexDirection: 'column',
+
+                            top: '0'
+                        }}>
+                            <span style={{
+                                fontSize: '18px',
+                                padding: '0 0 0',
+                                color: 'grey'
+                            }}> 
+                                {props.accountType}
+                            </span>
+                        </span>
+                    </span>
+                </span>
             </div>
 
             <div

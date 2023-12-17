@@ -7,6 +7,8 @@ import { Zoom } from "@mui/material";
 
 import { Sidebar } from './Components/Sidebar/Sidebar';
 import { Header } from './Components/Header/Header'; 
+
+import { AccountCreation } from './Components/Modals/AccountCreation/AccountCreation';
 import { DepositModal } from './Components/Modals/Deposit/DepositModal'; 
 import { WithdrawModal } from './Components/Modals/Withdraw/WithdrawModal';
 import { TransferModal } from './Components/Modals/Transfer/TransferModal';
@@ -18,6 +20,7 @@ export const Banking: React.FC = () => {
     const [DepositModalOpen, setDepositModalOpen] = React.useState(false);
     const [WithdrawModalOpen, setWithdrawModalOpen] = React.useState(false);
     const [TransferModalOpen, setTransferModalOpen] = React.useState(false);
+    const [AccountCreationModalOpen, setAccountCreationModalOpen] = React.useState(false)
 
     const [CharacterData, setCharacterData] = React.useState({
         Name: 'Aspect Dev',
@@ -73,15 +76,24 @@ export const Banking: React.FC = () => {
                     <Sidebar
                         accounts={CharacterData.Accounts}
                         selectedAccount={CharacterData.selectedAccount}
+
+                        setAccountCreationModalState={setAccountCreationModalOpen}
+                        
                         setDepositModalState={setDepositModalOpen}
                         setWithdrawModalState={setWithdrawModalOpen}
                         setTransferModalState={setTransferModalOpen}
+                        
                         CharacterData={CharacterData}
                         setCharacterData={setCharacterData}
                     />
                 </div>
 
                 <Transactions />
+                
+                <AccountCreation
+                    modalOpen={AccountCreationModalOpen}
+                    setModalOpen={setTransferModalOpen}
+                />
 
                 <DepositModal
                     modalOpen={DepositModalOpen}

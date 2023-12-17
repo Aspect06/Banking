@@ -1,0 +1,15 @@
+.transcationsContainer {
+    position: absolute;
+
+    top: 17.5vh;
+    height: 76.4%;
+    width: 110vh;
+    left: 54vh;
+
+    overflow-y: scroll;
+
+    .moreButton {
+        top: 2vh;
+        margin-left: 50vh
+    }
+}

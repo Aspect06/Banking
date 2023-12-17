@@ -1,7 +1,6 @@
 import { Button, ButtonGroup, Typography } from '@mui/material'
 
 import styles from './Accounts.module.scss'
-// import styles from './BusinessAccounts.module.scss'
 
 export const BusinessAccounts: React.FC<{
     accountId: any
@@ -44,6 +43,12 @@ export const BusinessAccounts: React.FC<{
                     className={styles.accountBalance}
                 >
                     Balance: ${props.accountBalance}
+                </Typography>
+
+                <Typography
+                    className={styles.accountType}
+                >
+                    Business Account
                 </Typography>
             </div>
 

@@ -10,6 +10,7 @@ import { Header } from './Components/Header/Header';
 import { DepositModal } from './Components/Modals/Deposit/DepositModal'; 
 import { WithdrawModal } from './Components/Modals/Withdraw/WithdrawModal';
 import { TransferModal } from './Components/Modals/Transfer/TransferModal';
+import { Transactions } from './Components/Transactions/Transactions';
 
 export const Banking: React.FC = () => {
     const [Open, setOpen] = React.useState(true);
@@ -88,6 +89,8 @@ export const Banking: React.FC = () => {
                         setCharacterData={setCharacterData}
                     />
                 </div>
+
+                <Transactions />
 
                 <DepositModal
                     modalOpen={DepositModalOpen}

@@ -1,0 +1,21 @@
+.transactionsItem {
+    height: 25%;
+    width: 99%;
+
+    margin-left: 0.5%;
+
+    background-color: #2f2f2f;
+
+    margin-top: 1vh;
+
+    .accountType {
+        font-family: 'Aspect';
+        font-size: 3vh;
+        color: white;
+
+        .splitter {
+            margin-top: 1vh;
+            border-bottom: 0.1vh solid #fff;
+        }
+    }
+}

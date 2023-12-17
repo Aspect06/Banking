@@ -43,6 +43,12 @@ export const Accounts: React.FC<{
                 >
                     Balance: ${props.accountBalance}
                 </Typography>
+
+                <Typography
+                    className={styles.accountType}
+                >
+                    Personal Account
+                </Typography>
             </div>
 
             <div

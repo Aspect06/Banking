@@ -15,16 +15,24 @@
         color: rgb(232, 232, 232);
 
         .accountName {
-            font-family: 'Aspect';
+            margin-top: 0.2vh;
+            font-family: 'AspectDev';
             user-select: none;
             font-size: 2.5vh;
         }
 
         .accountBalance {
-            font-family: 'Aspect';
+            font-family: 'AspectDevelopment';
             user-select: none;
             font-size: 2vh;
             color: rgb(209, 209, 209);
+        }
+
+        .accountType {
+            margin-top: 0.2vh;
+            font-family: 'AspectDevelopment';
+            user-select: none;
+            font-size: 2vh;
         }
     }
 

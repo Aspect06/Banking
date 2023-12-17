@@ -11,6 +11,16 @@
 	src: url(../public/fonts/BebasNeueProRegular.otf)
 }
 
+@font-face{
+	font-family: 'AspectDev';
+	src: url(../public/fonts/URWGeometricBold.otf)
+}
+
+@font-face{
+	font-family: 'AspectDevelopment';
+	src: url(../public/fonts/URWGeometricLight.otf)
+}
+
 body {
   overflow: hidden;
   background-color: transparent !important;

@@ -21,16 +21,6 @@ export const Sidebar: React.FC<{
         <div
             className={styles.Sidebar}
         >
-            <div className={styles.accountsCategoryHeader}>
-                <FontAwesomeIcon 
-                    icon={faInfoCircle}
-                    style={{
-                        paddingRight: '.5vh'
-                    }}
-                />
-                Personal Accounts
-            </div>
-
             {props.accounts.map((data, index) => {
                 return (
                     <Accounts
@@ -46,18 +36,6 @@ export const Sidebar: React.FC<{
                     />
                 )
             })}
-
-            {props.businessaccounts.length > 1 &&
-                <div className={styles.accountsCategoryHeader}>
-                    <FontAwesomeIcon 
-                        icon={faBriefcase}
-                        style={{
-                            paddingRight: '.5vh'
-                        }}
-                    />
-                    Business Accounts
-                </div>
-            }
             
             {props.businessaccounts.map((data, index) => {
                 return (

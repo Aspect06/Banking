@@ -3,12 +3,10 @@ import styles from './Sidebar.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-import { Accounts } from '../Accounts/Personal/Accounts'
-import { BusinessAccounts } from '../Accounts/Business/BusinessAccounts'
+import { Accounts } from '../Accounts/Accounts'
 
 export const Sidebar: React.FC<{
     accounts: any
-    businessaccounts: any
     selectedAccount: any
     setDepositModalState: any
     setWithdrawModalState: any
@@ -36,24 +34,6 @@ export const Sidebar: React.FC<{
                     />
                 )
             })}
-            
-            {props.businessaccounts.map((data, index) => {
-                return (
-                    <BusinessAccounts
-                        accountId={data.accountId}
-                        accountType={data.accountType}
-                        accountName={data.name}
-                        accountBalance={data.balance}
-                        setDepositModal={props.setDepositModalState}
-                        setWithdrawModal={props.setWithdrawModalState}
-                        setTransferModal={props.setTransferModalState}
-                        selectedAccount={props.selectedAccount}
-                        CharacterData={props.CharacterData}
-                        setCharacterData={props.setCharacterData}
-                    />
-                )
-            })}
-
         </div>
     )
 }

@@ -62,9 +62,7 @@ export const Accounts: React.FC<{
                         variant="contained" color="success"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
-                        onClick={() => {
-                            props.setDepositModal(true);
-                        }}
+                        onClick={() => props.setDepositModal(true)}
                         style={{
                             height: '3.25vh',
                             width: '12vh',
@@ -78,9 +76,7 @@ export const Accounts: React.FC<{
                         color="warning"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
-                        onClick={() => {
-                            props.setWithdrawModal(true);
-                        }}
+                        onClick={() => props.setWithdrawModal(true)}
                         style={{
                             height: '3.25vh',
                             width: '12vh',
@@ -93,11 +89,8 @@ export const Accounts: React.FC<{
                         variant="contained"
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
-                        onClick={() => {
-                            props.setTransferModal(true);
-                        }}
+                        onClick={() => props.setTransferModal(true)}
                         style={{
-                            color: '#f0f0f0',
                             height: '3.25vh',
                             width: '12vh',
                             fontSize: '1.25vh'

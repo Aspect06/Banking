@@ -27,33 +27,51 @@ export const Banking: React.FC = () => {
         Accounts: [
             {
                 accountId: 1,
+                accountType: 'Personal',
                 name: 'Aspect Dev',
                 balance: 25000
             },
             {
                 accountId: 2,
+                accountType: 'Savings',
+                name: 'Aspect Savings',
+                balance: 650000
+            },
+            {
+                accountId: 3,
+                accountType: 'Personal',
                 name: '2k Dev',
                 balance: 25000
+            },
+            {
+                accountId: 4,
+                accountType: 'Savings',
+                name: '2k Savings',
+                balance: 650000
             },
         ],
         BusinessAccounts: [
             {
-                accountId: 3,
+                accountId: 5,
+                accountType: 'Business',
                 name: 'Los Santos Police Department',
                 balance: 250000
             },
             {
-                accountId: 4,
+                accountId: 6,
+                accountType: 'Business',
                 name: 'Blaine County Sheriffs Office',
                 balance: 250000
             },
             {
-                accountId: 5,
+                accountId: 7,
+                accountType: 'Business',
                 name: 'San Andreas State Police',
                 balance: 250000
             },
             {
-                accountId: 6,
+                accountId: 8,
+                accountType: 'Business',
                 name: 'San Andreas State Park Rangers',
                 balance: 250000
             },

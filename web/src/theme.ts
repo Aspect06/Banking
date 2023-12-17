@@ -6,6 +6,8 @@ export const theme = createTheme({
     palette: {
         mode: "dark",
 
+        primary: createColor("#fff"),
+
         navy: createColor("#003478"),
         gray: {
             ...createColor("#333537"),

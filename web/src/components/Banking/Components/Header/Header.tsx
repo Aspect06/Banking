@@ -22,11 +22,11 @@ export const Header: React.FC<{
             </Typography>
 
             <Typography
-                className={styles.balance}
+                className={styles.CashAmount}
             >
                 You currently have <span style={{
                     color: 'green'
-                }}>${props.cash}.</span>
+                }}>${props.cash} </span> in your wallet.
             </Typography>
         </div>
     )

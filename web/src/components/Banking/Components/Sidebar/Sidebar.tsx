@@ -1,8 +1,10 @@
 import styles from './Sidebar.module.scss'
 
-import { Button } from '@mui/material';
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 
 import { Accounts } from '../Accounts/Accounts'
+import { Tooltip } from '@mui/material';
 
 export const Sidebar: React.FC<{
     accounts: any
@@ -21,19 +23,30 @@ export const Sidebar: React.FC<{
         <div
             className={styles.Sidebar}
         >
-            {/* <Button
-                variant="contained" color="success"
-                className={styles.actionButton}
-                onClick={() => props.setAccountCreationModalState(true)}
-                style={{
-                    height: '3.25vh',
-                    width: '12vh',
-                    fontSize: '1.25vh'
-                }}
+            <Tooltip
+                title={'Create Savings Account'}
+                placement={'right'}
+                arrow
             >
-                Create Account
-            </Button> */}
-            
+                <div
+                    style={{
+                        position: 'fixed',
+                        display: 'flex',
+                        right: '2vh',
+                        zIndex: '1',
+                        bottom: '3vh'
+                    }}
+                >
+                    <Fab
+                        color="success"
+                        aria-label="add"
+                        onClick={() => props.setAccountCreationModalState(true)}
+                    >
+                        <AddIcon />
+                    </Fab>
+                </div>
+            </Tooltip>
+
             {props.accounts.map((data, index) => {
                 return (
                     <Accounts

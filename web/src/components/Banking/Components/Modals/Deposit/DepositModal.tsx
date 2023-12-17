@@ -109,7 +109,7 @@ export const DepositModal: React.FC<{
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginTop: '20%'
+                            marginTop: '3%'
                         }}
                     >
                         <div>

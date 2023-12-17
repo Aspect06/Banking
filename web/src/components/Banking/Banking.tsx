@@ -52,6 +52,18 @@ export const Banking: React.FC = () => {
                 name: 'LEO Budget',
                 balance: 125000
             },
+            {
+                accountId: 4,
+                accountType: 'Government Fund',
+                name: 'LEO Budget',
+                balance: 125000
+            },
+            {
+                accountId: 4,
+                accountType: 'Government Fund',
+                name: 'LEO Budget',
+                balance: 125000
+            },
         ],
     })
 
@@ -92,7 +104,7 @@ export const Banking: React.FC = () => {
                 
                 <AccountCreation
                     modalOpen={AccountCreationModalOpen}
-                    setModalOpen={setTransferModalOpen}
+                    setModalOpen={setAccountCreationModalOpen}
                 />
 
                 <DepositModal

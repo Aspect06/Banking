@@ -12,8 +12,7 @@ export const AccountCreation: React.FC<{
 }> = (props) => {
     const [Loading, setLoading] = React.useState(false);
 
-    const [Amount, setAmount] = React.useState(0);
-    const [Comment, setComment] = React.useState('');
+    const [AccountName, setAccountName] = React.useState('');
 
     return (
         <Zoom
@@ -33,42 +32,15 @@ export const AccountCreation: React.FC<{
 
                         <TextField
                             id="outlined-basic"
-                            label="Amount"
+                            label="Account Name"
                             variant="outlined"
-                            value={Amount}
-
+                            value={AccountName}
                             onChange={(e) => {
-                                setAmount(Number(e.target.value))
+                                setAccountName(e.target.value)
                             }}
 
                             style={{
                                 marginTop: '9vh',
-                                width: '32.5vw',
-                                left: '2vh'
-                            }}
-
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <FontAwesomeIcon icon={faDollarSign} />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-
-                        <TextField
-                            id="outlined-basic"
-                            label="Comment"
-                            variant="outlined"
-                            value={Comment}
-                            onChange={(e) => {
-                                setComment(e.target.value)
-                            }}
-                            
-                            multiline
-                            rows={5}
-                            style={{
-                                marginTop: '2vh',
                                 width: '32.5vw',
                                 left: '2vh'
                             }}
@@ -84,8 +56,7 @@ export const AccountCreation: React.FC<{
                                         color="error"
                                         onClick={() => {
                                             props.setModalOpen(false);
-                                            setAmount(0);
-                                            setComment('');
+                                            setAccountName('');
                                         }}
                                     >
                                         Cancel
@@ -101,7 +72,7 @@ export const AccountCreation: React.FC<{
                                             }, 1000)
                                         }}
                                     >
-                                        Deposit
+                                        Create
                                     </Button>
                                 </ButtonGroup>
                             </div>
@@ -114,7 +85,7 @@ export const AccountCreation: React.FC<{
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginTop: '20%'
+                            marginTop: '3%'
                         }}
                     >
                         <div>

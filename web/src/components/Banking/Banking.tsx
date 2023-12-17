@@ -28,19 +28,19 @@ export const Banking: React.FC = () => {
             {
                 accountId: 1,
                 accountType: 'Personal',
-                name: 'Personal Account',
+                name: 'James Williams',
                 balance: 25000
             },
             {
                 accountId: 2,
                 accountType: 'Savings',
-                name: 'Savings Account',
+                name: 'Big Booty Latinas',
                 balance: 25000
             },
             {
                 accountId: 3,
                 accountType: 'Business',
-                name: 'Business Account',
+                name: 'Burger Shot',
                 balance: 25000
             },
             {

@@ -91,13 +91,13 @@ export const Accounts: React.FC<{
                     </Button>
                     <Button
                         variant="contained"
-                        color={"white"}
                         className={styles.actionButton}
                         disabled={props.accountId != props.selectedAccount}
                         onClick={() => {
                             props.setTransferModal(true);
                         }}
                         style={{
+                            color: '#f0f0f0',
                             height: '3.25vh',
                             width: '12vh',
                             fontSize: '1.25vh'

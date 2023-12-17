@@ -7,14 +7,6 @@ export const theme = createTheme({
         mode: "dark",
 
         primary: createColor("#fff"),
-
-        navy: createColor("#003478"),
-        gray: {
-            ...createColor("#333537"),
-            contrastText: "#BFBFCB"
-        },
-
-        white: createColor("#f0f0f0")
     },
 
     components: {

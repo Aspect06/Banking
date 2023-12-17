@@ -72,7 +72,9 @@ export const Transactions: React.FC = () => {
                 >
                     <CircularProgress
                         size={125}
-                        color={'gray'}
+                        style={{
+                            color: '#333537'
+                        }}
                     />
                 </div>
             }

@@ -69,34 +69,37 @@ export const DepositModal: React.FC<{
                             }}
                         />
 
-                        <div
-                            className={styles.ButtonContainer}
-                        >
-                            <ButtonGroup>
-                                <Button
-                                    variant="contained" color="error"
-                                    onClick={() => {
-                                        props.setModalOpen(false);
-                                        setAmount(0);
-                                        setComment('');
-                                    }}
-                                >
-                                    Cancel
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    color="success"
-                                    onClick={() => {
-                                        setLoading(true);
+                        <div>
+                            <div 
+                                className={styles.ButtonContainer}
+                            >
+                                <ButtonGroup>
+                                    <Button
+                                        variant="contained"
+                                        color="error"
+                                        onClick={() => {
+                                            props.setModalOpen(false);
+                                            setAmount(0);
+                                            setComment('');
+                                        }}
+                                    >
+                                        Cancel
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        color="success"
+                                        onClick={() => {
+                                            setLoading(true);
 
-                                        setTimeout(() => {
-                                            setLoading(false);
-                                        }, 1500)
-                                    }}
-                                >
-                                    Deposit
-                                </Button>
-                            </ButtonGroup>
+                                            setTimeout(() => {
+                                                setLoading(false);
+                                            }, 1500)
+                                        }}
+                                    >
+                                        Deposit
+                                    </Button>
+                                </ButtonGroup>
+                            </div>
                         </div>
                     </>
                 }

@@ -21,7 +21,7 @@ export const TransactionsItem: React.FC<{
                         fontSize: '2vh',
                         marginTop: '1vh',
                         marginLeft: '1vh',
-                        paddingRight: '0.5vh'
+                        paddingRight: '1vh'
                     }}
                 />
                 {props.Transaction.Account}
@@ -32,7 +32,8 @@ export const TransactionsItem: React.FC<{
 
                 <div
                     style={{
-                        color: 'green'
+                        color: 'green',
+                        paddingTop: '1vh',
                     }}
                 >
                     <FontAwesomeIcon
@@ -51,8 +52,11 @@ export const TransactionsItem: React.FC<{
                 <div
                     style={{
                         position: 'absolute',
+
                         right: '1vh',
-                        marginTop: '-2.75vh'
+                        marginTop: '-4vh',
+
+                        textShadow: '2px 2px 2px rgba(0, 0, 0, 0.426)'
                     }}
                 >
                     {Date()}

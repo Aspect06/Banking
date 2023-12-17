@@ -5,6 +5,9 @@
     margin-left: 0.5%;
 
     background-color: #2f2f2f;
+    border-radius: .5vh;
+
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.492));
 
     margin-top: 1vh;
 
@@ -13,6 +16,9 @@
         font-size: 3vh;
         color: white;
 
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.426);
+        padding-top: .6vh;
+
         .splitter {
             margin-top: 1vh;
             border-bottom: 0.1vh solid #fff;
@@ -20,10 +26,13 @@
 
         .Comment {
             position: absolute;
+            margin-top: 2vh;
+            
+            left: 1.5vh;
+
             font-family: 'AspectDevelopment';
             font-size: 1.5vh;
-            left: 1.5vh;
-            margin-top: 2vh
+
         }
     }
 }

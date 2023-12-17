@@ -19,30 +19,27 @@
         float: right;
         
         top: 2.5vh;
+        right: 2vh;
 
-        // line-height: 9vh;
         font-family: 'Aspect';
         font-size: 3vh;
         color: white;
     
         width: fit-content;
 
-        right: 2vh;
     }
 
-    .balance {
+    .CashAmount {
         position: absolute;
         float: right;
         
         top: 6vh;
+        right: 2vh;
 
-        // line-height: 16vh;
+        width: fit-content;
+
         font-family: 'Aspect';
         font-size: 2vh;
         color: rgb(204, 204, 204);
-    
-        width: fit-content;
-
-        right: 2vh;
     }
 }

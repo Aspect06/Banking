@@ -3,7 +3,7 @@ import styles from '../Modal.module.scss'
 import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { faDollarSign, faIdCard, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 
 export const TransferModal: React.FC<{
     modalOpen: boolean;
@@ -14,6 +14,7 @@ export const TransferModal: React.FC<{
     const [Amount, setAmount] = React.useState(0);
     const [Comment, setComment] = React.useState('');
     const [stateId, setStateId] = React.useState(0);
+    const [AccountId, setAccountId] = React.useState(0);
 
     return (
         <Zoom
@@ -43,6 +44,35 @@ export const TransferModal: React.FC<{
                                 marginTop: '9vh',
                                 width: '32.5vw',
                                 left: '2vh'
+                            }}
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <FontAwesomeIcon icon={faIdCard}/>
+                                  </InputAdornment>
+                                ),
+                            }}
+                        />
+
+                        <TextField
+                            id="outlined-basic"
+                            label="Account Id"
+                            variant="outlined"
+                            value={AccountId}
+                            onChange={(e) => {
+                                setAccountId(Number(e.target.value))
+                            }}
+                            style={{
+                                marginTop: '2vh',
+                                width: '32.5vw',
+                                left: '2vh'
+                            }}
+                            InputProps={{
+                                startAdornment: (
+                                  <InputAdornment position="start">
+                                    <FontAwesomeIcon icon={faPiggyBank}/>
+                                  </InputAdornment>
+                                ),
                             }}
                         />
 

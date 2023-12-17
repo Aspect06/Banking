@@ -28,30 +28,28 @@ export const Banking: React.FC = () => {
             {
                 accountId: 1,
                 accountType: 'Personal',
-                name: 'Personal Account Example',
+                name: 'Personal Account',
                 balance: 25000
             },
             {
                 accountId: 2,
                 accountType: 'Savings',
-                name: 'Savings Account Example',
+                name: 'Savings Account',
+                balance: 25000
+            },
+            {
+                accountId: 3,
+                accountType: 'Business',
+                name: 'Business Account',
+                balance: 25000
+            },
+            {
+                accountId: 4,
+                accountType: 'Government Fund',
+                name: 'LEO Budget',
                 balance: 125000
             },
         ],
-        BusinessAccounts: [
-            {
-                accountId: 5,
-                accountType: 'Business Account',
-                name: 'Business Account Example',
-                balance: 65000
-            },
-            {
-                accountId: 6,
-                accountType: 'Government Fund',
-                name: 'Government Fund Example',
-                balance: 250000
-            },
-        ]
     })
 
     return (
@@ -74,7 +72,6 @@ export const Banking: React.FC = () => {
 
                     <Sidebar
                         accounts={CharacterData.Accounts}
-                        businessaccounts={CharacterData.BusinessAccounts}
                         selectedAccount={CharacterData.selectedAccount}
                         setDepositModalState={setDepositModalOpen}
                         setWithdrawModalState={setWithdrawModalOpen}

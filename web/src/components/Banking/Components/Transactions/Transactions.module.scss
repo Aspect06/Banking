@@ -9,6 +9,7 @@
     overflow-y: scroll;
 
     .transactionHeader {
+        user-select: none;
         font-family: 'AspectDev';
         color: white;
         font-size: 3vh;

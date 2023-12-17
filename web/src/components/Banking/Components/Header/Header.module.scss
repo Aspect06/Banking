@@ -15,6 +15,7 @@
     }
 
     .CharacterName {
+        user-select: none;
         position: relative;
         float: right;
         
@@ -30,6 +31,7 @@
     }
 
     .CashAmount {
+        user-select: none;
         position: absolute;
         float: right;
         

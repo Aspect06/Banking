@@ -5,7 +5,6 @@ import { faBuildingColumns, faMoneyBill } from '@fortawesome/free-solid-svg-icon
 
 export const TransactionsItem: React.FC<{
     Transaction: any
-    setLoadedTransactions: any
 }> = (props) => {
     return (
         <div

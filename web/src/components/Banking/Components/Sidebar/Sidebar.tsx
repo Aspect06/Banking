@@ -21,6 +21,7 @@ export const Sidebar: React.FC<{
             {props.accounts.map((data, index) => {
                 return (
                     <Accounts
+                        key={index}
                         accountId={data.accountId}
                         accountType={data.accountType}
                         accountName={data.name}

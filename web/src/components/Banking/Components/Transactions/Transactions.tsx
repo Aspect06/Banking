@@ -18,10 +18,19 @@ export const Transactions: React.FC = () => {
             Amount: 100,
             Comment: 'Something or money...'
         },
+        {
+            Account: 'Personal',
+            Amount: 100,
+            Comment: 'Something or money...'
+        },
+        {
+            Account: 'Personal',
+            Amount: 100,
+            Comment: 'Something or money...'
+        },
     ]);
 
-    const [LoadedTransactions, setLoadedTransactions] = React.useState(0);
-    const TransactionsLoad = 1
+    const [TransactionsToLoad, setTransactionsToLoad] = React.useState(25);
 
     // React.useEffect(() => {
     //     setLoading(true);
@@ -58,25 +67,22 @@ export const Transactions: React.FC = () => {
 
             {!Loading &&
                 <>
-                    {PlaceholderTransactions.map((data) => {
-                        // console.log(LoadedTransactions)
-                        // console.log(TransactionsLoad)
-                        if (LoadedTransactions < TransactionsLoad) {
-                            // TransactionsLoad = TransactionsLoad + 1
+                    {PlaceholderTransactions.map((data, index) => {
+                        if (TransactionsToLoad > index) {
                             return (
                                 <TransactionsItem
+                                    key={index}
                                     Transaction={data}
-                                    setLoadedTransactions={setLoadedTransactions}
                                 />
                             )
                         }
                     })}
 
-                    {PlaceholderTransactions.length > TransactionsLoad &&
+                    {PlaceholderTransactions.length > TransactionsToLoad &&
                         <Button
                             className={styles.moreButton}
                             variant={'contained'}
-                            // onClick={() => TransactionsLoad = TransactionsLoad + 25}
+                            onClick={() => setTransactionsToLoad(TransactionsToLoad + 25)}
                         >
                             Show More
                         </Button>

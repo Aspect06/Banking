@@ -2,6 +2,8 @@ import styles from './Header.module.scss'
 import { Typography } from '@mui/material'
 import Logo from '../../../../assets/images/logo.png'
 
+import { FormatCurrency } from '../Utils'
+
 export const Header: React.FC<{
     name: string
     cash: number
@@ -26,7 +28,7 @@ export const Header: React.FC<{
             >
                 You currently have <span style={{
                     color: 'green'
-                }}>${props.cash} </span> in your wallet.
+                }}>{FormatCurrency(props.cash)} </span> in your wallet.
             </Typography>
         </div>
     )

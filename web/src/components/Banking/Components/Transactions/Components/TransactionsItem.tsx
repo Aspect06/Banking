@@ -3,6 +3,8 @@ import styles from './TransactionsItem.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuildingColumns, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
+import { FormatCurrency } from '../../Utils'
+
 export const TransactionsItem: React.FC<{
     Transaction: any
 }> = (props) => {
@@ -45,7 +47,7 @@ export const TransactionsItem: React.FC<{
                             paddingRight: '0.5vh'
                         }}
                     />
-                    ${props.Transaction.Amount}
+                    {FormatCurrency(props.Transaction.Amount)}
                 </div>
 
                 <div

@@ -3,6 +3,8 @@ import { IconButton, Menu, MenuItem, Tooltip, Button, FormControl } from '@mui/m
 import styles from './Accounts.module.scss'
 import { fetchNui } from '../../../../hooks/fetchNui'
 
+import { FormatCurrency } from '../Utils'
+
 export const Accounts: React.FC<{
     accountId: any
     canManage: any
@@ -132,7 +134,7 @@ export const Accounts: React.FC<{
                                 padding: '0 0 0',
                                 color: 'grey'
                             }}>
-                                Balance: ${props.accountBalance}
+                                Balance: {FormatCurrency(props.accountBalance)}
                             </span>
                             <span style={{
                                 fontSize: '1.6vh',

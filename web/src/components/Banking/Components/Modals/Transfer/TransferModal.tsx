@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../Modal.module.scss'
-import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
+import { Button, ButtonGroup, CircularProgress, FormControl, InputAdornment, InputLabel, MenuItem, Select, TextField, Typography, Zoom } from '@mui/material';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign, faIdCard, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +15,7 @@ export const TransferModal: React.FC<{
     const [Comment, setComment] = React.useState('');
     const [stateId, setStateId] = React.useState(0);
     const [AccountId, setAccountId] = React.useState(0);
+    const [AccountType, setAccountType] = React.useState('Personal Account');
 
     return (
         <Zoom
@@ -37,6 +38,7 @@ export const TransferModal: React.FC<{
                             label="StateId"
                             variant="outlined"
                             value={stateId}
+                            disabled={AccountType !== 'Personal Account'}
                             onChange={(e) => {
                                 setStateId(Number(e.target.value))
                             }}
@@ -59,6 +61,7 @@ export const TransferModal: React.FC<{
                             label="Account Id"
                             variant="outlined"
                             value={AccountId}
+                            disabled={AccountType === 'Personal Account'}
                             onChange={(e) => {
                                 setAccountId(Number(e.target.value))
                             }}
@@ -75,6 +78,43 @@ export const TransferModal: React.FC<{
                                 ),
                             }}
                         />
+
+                        <FormControl
+                            style={{
+                                marginTop: '2vh',
+                                width: '32.5vw',
+                                left: '2vh'
+                            }}
+                        >
+                            <InputLabel id="demo-simple-select-label">Target Account Type</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={AccountType}
+                                label="Key Holder"
+                                onChange={(e) => {
+                                    setAccountType(e.target.value)
+                                }}
+                            >
+                                <MenuItem
+                                    value={'Personal Account'}
+                                >
+                                    Personal Account
+                                </MenuItem>
+
+                                <MenuItem
+                                    value={'Savings Account'}
+                                >
+                                    Savings Account
+                                </MenuItem>
+
+                                <MenuItem
+                                    value={'Business Account'}
+                                >
+                                    Business Account
+                                </MenuItem>
+                            </Select>
+                        </FormControl>
 
                         <TextField
                             id="outlined-basic"

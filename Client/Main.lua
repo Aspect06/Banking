@@ -18,12 +18,12 @@ NUI = {
             },
             Accounts = Accounts.getAccounts(),
         })
+        Callbacks.getPersonalTransactions();
     end,
 
     OpenBanking = function()
         NUI.GetData();
         NUI.SendReactMessage('Banking:Open');
-        Callbacks.getPersonalTransactions();
         SetNuiFocus(true, true)
     end,
 
@@ -34,4 +34,8 @@ NUI = {
 
 RegisterNUICallback('Banking:Close', function()
     NUI.CloseBanking();
+end)
+
+RegisterCommand('OpenBanking', function()
+    NUI.OpenBanking();
 end)

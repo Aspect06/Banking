@@ -55,7 +55,7 @@ export const Transactions: React.FC<{
                             style={{
                                 height: '3.5vh',
                                 width: '12vh',
-                                fontSize: '1.25vh'
+                                fontSize: '1.25vh',
                             }}
                         >
                             Deposit

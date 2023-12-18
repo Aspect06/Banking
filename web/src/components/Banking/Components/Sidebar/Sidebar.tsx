@@ -15,7 +15,8 @@ export const Sidebar: React.FC<{
     CharacterData: any
     setCharacterData: any
     
-    setDeleteAccount: any 
+    setDeleteAccount: any
+    setManageAccessModal: any
 }> = (props) => {
     return (
         <>
@@ -62,6 +63,7 @@ export const Sidebar: React.FC<{
                         <Accounts
                             key={index}
                             accountId={data.accountId}
+                            canManage={data.canManage}
                             accountType={data.accountType}
                             accountName={data.name}
                             accountBalance={data.balance}
@@ -69,6 +71,7 @@ export const Sidebar: React.FC<{
                             CharacterData={props.CharacterData}
                             setCharacterData={props.setCharacterData}
                             setDeleteAccount={props.setDeleteAccount}
+                            setManageAccess={props.setManageAccessModal}
                         />
                     )
                 })}

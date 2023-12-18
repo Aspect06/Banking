@@ -1,13 +1,12 @@
 import React from 'react'
 import styles from '../Modal.module.scss'
-import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { Button, ButtonGroup, CircularProgress, Typography, Zoom } from '@mui/material';
+import { fetchNui } from '../../../../../hooks/fetchNui';
 
 export const DeleteAccount: React.FC<{
-    modalOpen: boolean;
+    modalOpen: boolean
     setModalOpen: any
+    selectedAccountId: any
 }> = (props) => {
     const [Loading, setLoading] = React.useState(false);
 
@@ -62,6 +61,10 @@ export const DeleteAccount: React.FC<{
                                             setTimeout(() => {
                                                 props.setModalOpen(false);
                                                 setLoading(false);
+
+                                                fetchNui('Banking:deleteSavings', {
+                                                    accountId: props.selectedAccountId
+                                                })
                                             }, 1500)
                                         }}
                                     >

@@ -4,10 +4,12 @@ import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typog
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { fetchNui } from '../../../../../hooks/fetchNui';
 
 export const DepositModal: React.FC<{
     modalOpen: boolean;
     setModalOpen: any
+    selectedAccount: any
 }> = (props) => {
     const [Loading, setLoading] = React.useState(false);
 
@@ -93,7 +95,13 @@ export const DepositModal: React.FC<{
 
                                             setTimeout(() => {
                                                 props.setModalOpen(false);
-                                                setLoading(false);
+                                                setTimeout(() => {
+                                                    setLoading(false);
+                                                    fetchNui('Banking:depositMoney', {
+                                                        accountId: props.selectedAccount.accountId,
+                                                        accountType: props.selectedAccount.accountType
+                                                    })
+                                                }, 250)
                                             }, 1500)
                                         }}
                                     >

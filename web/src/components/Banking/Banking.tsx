@@ -3,7 +3,7 @@ import React from 'react';
 import styles from "./Banking.module.scss";
 import "./Components/Scroll.module.scss"
 
-import { Zoom } from "@mui/material";
+import { Button, Menu, MenuItem, Zoom } from "@mui/material";
 
 import { Sidebar } from './Components/Sidebar/Sidebar';
 import { Header } from './Components/Header/Header'; 
@@ -12,21 +12,25 @@ import { AccountCreation } from './Components/Modals/AccountCreation/AccountCrea
 import { DepositModal } from './Components/Modals/Deposit/DepositModal'; 
 import { WithdrawModal } from './Components/Modals/Withdraw/WithdrawModal';
 import { TransferModal } from './Components/Modals/Transfer/TransferModal';
-import { DeleteAccount } from './Components/Modals/DeleteAccount/DeleteAccount'
+import { DeleteAccount } from './Components/Modals/DeleteAccount/DeleteAccount';
+import { ManageAccess } from './Components/Modals/ManageAccess/ManageAccessModal';
 
 import { Transactions } from './Components/Transactions/Transactions';
 
 import { useNuiEvent } from '../../hooks/useNuiEvent';
 import { fetchNui } from '../../hooks/fetchNui';
+import { isEnvBrowser } from '../../hooks/misc';
 
 export const Banking: React.FC = () => {
-    const [Open, setOpen] = React.useState(true);
+    const [Open, setOpen] = React.useState(false);
+    const [ToolsOpen, setToolsOpen] = React.useState(false);
 
     const [DepositModalOpen, setDepositModalOpen] = React.useState(false);
     const [WithdrawModalOpen, setWithdrawModalOpen] = React.useState(false);
     const [TransferModalOpen, setTransferModalOpen] = React.useState(false);
     const [DeleteAccountModal, setDeleteAccountModal] = React.useState(false);
     const [AccountCreationModalOpen, setAccountCreationModalOpen] = React.useState(false);
+    const [ManageAccessModal, setManageAccessModal] = React.useState(false);
 
     const [CharacterData, setCharacterData] = React.useState({
         Name: 'Aspect Dev',
@@ -48,7 +52,8 @@ export const Banking: React.FC = () => {
                 accountId: 2,
                 accountType: 'Savings Account',
                 name: 'Big Booty Latinas',
-                balance: 25000
+                balance: 25000,
+                canManage: false
             },
             {
                 accountId: 3,
@@ -58,9 +63,10 @@ export const Banking: React.FC = () => {
             },
             {
                 accountId: 4,
-                accountType: 'Government Fund',
+                accountType: 'Savings Account',
                 name: 'LEO Budget',
-                balance: 125000
+                balance: 125000,
+                canManage: true
             },
         ],
     })
@@ -89,67 +95,114 @@ export const Banking: React.FC = () => {
     })
 
     return (
-        <Zoom
-            in={Open}
-            timeout={750}
-            unmountOnExit
-            mountOnEnter
-        >
-            <div
-                className={styles.App}
+        <>
+            {isEnvBrowser() &&
+                <>
+                    <Button
+                        id="basic-button"
+                        color={'success'}
+                        aria-controls={ToolsOpen ? 'basic-menu' : undefined}
+                        aria-haspopup={"true"}
+                        aria-expanded={ToolsOpen ? 'true' : undefined}
+                        onClick={() => setToolsOpen(true)}
+                        variant={'contained'}
+                        style={{
+                            zIndex: 1,
+                            position: 'absolute',
+                            float: 'left',
+                            top: '1vh',
+                            left: '1vh'
+                        }}
+                    >
+                        Tools
+                    </Button>
+
+                    <Menu
+                        id="basic-menu"
+                        open={ToolsOpen}
+                        onClose={() => setToolsOpen(false)}
+                        MenuListProps={{
+                            'aria-labelledby' : 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={() => setOpen(true)}>Show Banking</MenuItem>
+                        <MenuItem onClick={() => setOpen(false)}>Hide Banking</MenuItem>
+                    </Menu>
+                </>
+            }
+
+            <Zoom
+                in={Open}
+                timeout={750}
+                unmountOnExit
+                mountOnEnter
             >
                 <div
-                    className={styles.BankAppContainer}
+                    className={styles.App}
                 >
-                    <Header
-                        name={CharacterData.Name}
-                        cash={CharacterData.Cash}
+                    <div
+                        className={styles.BankAppContainer}
+                    >
+                        <Header
+                            name={CharacterData.Name}
+                            cash={CharacterData.Cash}
+                        />
+
+                        <Sidebar
+                            accounts={CharacterData.Accounts}
+                            selectedAccount={CharacterData.selectedAccount}
+
+                            setAccountCreationModalState={setAccountCreationModalOpen}
+                            
+                            CharacterData={CharacterData}
+                            setCharacterData={setCharacterData}
+
+                            setDeleteAccount={setDeleteAccountModal}
+
+                            setManageAccessModal={setManageAccessModal}
+                        />
+                    </div>
+
+                    <Transactions
+                        setDepositModal={setDepositModalOpen}
+                        setWithdrawModal={setWithdrawModalOpen}
+                        setTransferModal={setTransferModalOpen}
+                    />
+                    
+                    <AccountCreation
+                        modalOpen={AccountCreationModalOpen}
+                        setModalOpen={setAccountCreationModalOpen}
                     />
 
-                    <Sidebar
-                        accounts={CharacterData.Accounts}
+                    <DepositModal
+                        modalOpen={DepositModalOpen}
+                        setModalOpen={setDepositModalOpen}
                         selectedAccount={CharacterData.selectedAccount}
+                    />
 
-                        setAccountCreationModalState={setAccountCreationModalOpen}
-                        
-                        CharacterData={CharacterData}
-                        setCharacterData={setCharacterData}
+                    <WithdrawModal
+                        modalOpen={WithdrawModalOpen}
+                        setModalOpen={setWithdrawModalOpen}
+                    />
 
-                        setDeleteAccount={setDeleteAccountModal}
+                    <TransferModal
+                        modalOpen={TransferModalOpen}
+                        setModalOpen={setTransferModalOpen}
+                    />
+
+                    <DeleteAccount
+                        modalOpen={DeleteAccountModal}
+                        setModalOpen={setDeleteAccountModal}
+                        selectedAccountId={CharacterData.selectedAccount.accountId}
+                    />
+
+                    <ManageAccess
+                        modalOpen={ManageAccessModal}
+                        setModalOpen={setManageAccessModal}
+                        accountId={CharacterData.selectedAccount.accountId}
                     />
                 </div>
-
-                <Transactions
-                    setDepositModal={setDepositModalOpen}
-                    setWithdrawModal={setWithdrawModalOpen}
-                    setTransferModal={setTransferModalOpen}
-                />
-                
-                <AccountCreation
-                    modalOpen={AccountCreationModalOpen}
-                    setModalOpen={setAccountCreationModalOpen}
-                />
-
-                <DepositModal
-                    modalOpen={DepositModalOpen}
-                    setModalOpen={setDepositModalOpen}
-                />
-
-                <WithdrawModal
-                    modalOpen={WithdrawModalOpen}
-                    setModalOpen={setWithdrawModalOpen}
-                />
-
-                <TransferModal
-                    modalOpen={TransferModalOpen}
-                    setModalOpen={setTransferModalOpen}
-                />
-
-                <DeleteAccount
-                    modalOpen={DeleteAccountModal}
-                    setModalOpen={setDeleteAccountModal}
-                />
-            </div>
-        </Zoom>
+            </Zoom>
+        </>
     )
 }

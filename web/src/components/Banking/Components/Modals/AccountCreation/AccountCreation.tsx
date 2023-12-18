@@ -70,6 +70,7 @@ export const AccountCreation: React.FC<{
                                             setTimeout(() => {
                                                 props.setModalOpen(false);
                                                 setLoading(false);
+                                                setAccountName('');
                                                 fetchNui('createSavings', {
                                                     Name: AccountName
                                                 })

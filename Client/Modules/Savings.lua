@@ -6,7 +6,10 @@ Savings = {
 
         Wait(500)
 
-        NUI.GetData();
+        NUI.GetData({
+            selectedAccountId = exports['Framework']:getCid(),
+            selectedAccountType = 'Personal Account'
+        });
     end,
 
     deleteAccount = function(data)
@@ -16,7 +19,10 @@ Savings = {
 
         Wait(500)
 
-        NUI.GetData();
+        NUI.GetData({
+            selectedAccountId = exports['Framework']:getCid(),
+            selectedAccountType = 'Personal Account'
+        });
     end,
 
     addAccess = function(data)

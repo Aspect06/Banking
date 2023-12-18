@@ -4,7 +4,15 @@ Actions = {
 
         Wait(250)
 
-        NUI.GetData();
+        Callbacks.SwitchAccount({
+            AccountId = data.accountId,
+            AccountType = data.Account
+        })
+
+        NUI.GetData({
+            selectedAccountId = data.accountId,
+            selectedAccountType = data.Account
+        });
     end,
 
     Deposit = function(data)
@@ -12,7 +20,15 @@ Actions = {
 
         Wait(250)
 
-        NUI.GetData();
+        Callbacks.SwitchAccount({
+            AccountId = data.accountId,
+            AccountType = data.Account
+        })
+
+        NUI.GetData({
+            selectedAccountId = data.accountId,
+            selectedAccountType = data.Account
+        });
     end,
 
     Transfer = function(data)

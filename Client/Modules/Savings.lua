@@ -28,6 +28,7 @@ Savings = {
     end,
 
     getAccess = function(data)
-        NUI.SendReactMesage('Banking:setAccountAccess', RPC.execute('Banking:getAccountAccess', data))
+        local Access = RPC.execute('Banking:getAccountAccess', data)
+        NUI.SendReactMessage('Banking:setAccountAccess', Access)
     end
 }

@@ -1,12 +1,10 @@
-Savings = {
-    getCharacterName = function(stateId)
-        local Character = MySQL.query.await('SELECT * FROM characters WHERE id = @Id', {
-            ['@Id'] = stateId
-        })
+getCharacterName = function(stateId)
+    local Character = MySQL.query.await('SELECT * FROM characters WHERE id = @Id', {
+        ['@Id'] = stateId
+    })
 
-        return Character[1].first_name .. ' ' .. Character[1].last_name
-    end
-}
+    return Character[1].first_name .. ' ' .. Character[1].last_name
+end
 
 RPC.register('Banking:createSavings', function(source, Array)
     local src = source
@@ -65,7 +63,7 @@ RPC.register('Banking:getAccountAccess', function(source, Array)
     for k, v in ipairs(json.decode(Savings[1].account_access)) do
         table.insert(Access, {
             stateId = v.stateId,
-            Name = Savings.getCharacterName(v.stateId),
+            Name = getCharacterName(v.stateId),
             AccessType = v.accessType
         })
     end

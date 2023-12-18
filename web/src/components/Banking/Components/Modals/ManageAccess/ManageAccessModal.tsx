@@ -18,8 +18,8 @@ export const ManageAccess: React.FC<{
     const [ShareHolder, setShareHolder] = React.useState('');
     const [Access, setAccess] = React.useState([]);
 
-    useNuiEvent('Banking:setAccountAccess', (DATA) => {
-        setAccess(DATA)
+    useNuiEvent('Banking:setAccountAccess', (Access) => {
+        setAccess(Access)
     })
 
     return (
@@ -104,14 +104,20 @@ export const ManageAccess: React.FC<{
                                 }}
                             >
                                 <>
-                                    {Access.map((data, index) => {
-                                        <MenuItem
-                                            value={data.stateId}
-                                            disabled={data.AccessType == 'Owner' ? true : false}
-                                        >
-                                            {data.name}
-                                        </MenuItem>
-                                    })}
+                                    {Access.length >= 1 &&
+                                        <>
+                                            {Access.map((data) => {
+                                                return (
+                                                    <MenuItem
+                                                        value={data.stateId}
+                                                        disabled={data.AccessType == 'Owner' ? true : false}
+                                                    >
+                                                        {data.Name}
+                                                    </MenuItem>
+                                                )
+                                            })}
+                                        </>
+                                    }
 
                                     {Access.length < 1 &&
                                         <MenuItem

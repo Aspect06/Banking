@@ -3,54 +3,28 @@ import React from 'react'
 import styles from './Transactions.module.scss'
 
 import { TransactionsItem } from './Components/TransactionsItem'
-import { Button, CircularProgress } from '@mui/material'
+import { Button, ButtonGroup, CircularProgress, Typography } from '@mui/material'
+import { useNuiEvent } from '../../../../hooks/useNuiEvent'
 
-export const Transactions: React.FC = () => {
+import { SentimentSatisfied } from '@material-ui/icons';
+
+export const Transactions: React.FC<{
+    setDepositModal: any
+    setWithdrawModal: any
+    setTransferModal: any
+}> = (props) => {
     const [Loading, setLoading] = React.useState(false);
-    const [PlaceholderTransactions, setPlaceholderTransactions] = React.useState([
-        {Account: 'Personal', Amount: 100, Comment: 'Hi...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii...'},
-        {Account: 'Personal', Amount: 100, Comment: 'Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii'},
-    ]);
-
+    const [Transactions, setTransactions] = React.useState([]);
     const [TransactionsToLoad, setTransactionsToLoad] = React.useState(25);
 
-    // React.useEffect(() => {
-    //     setLoading(true);
+    useNuiEvent('Transactions:setTransactions', (data) => {
+        setLoading(true);
 
-    //     setTimeout(() => {
-    //         setLoading(false);
-    //     }, 1500)
-    // })
+        setTimeout(() => {
+            setLoading(false);
+            setTransactions(data.Transactions)
+        }, 1000)
+    })
 
     return (
         <div
@@ -61,6 +35,61 @@ export const Transactions: React.FC = () => {
             >
                 Transactions
             </div>
+
+            {!Loading &&
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: '1vh',
+                        right: '1vh'
+                    }}
+                >
+                    <ButtonGroup
+                        variant="contained"
+                        aria-label="outlined primary button group"
+                    >
+                        <Button
+                            variant="contained" color="success"
+                            className={styles.actionButton}
+                            onClick={() => props.setDepositModal(true)}
+                            style={{
+                                height: '3.5vh',
+                                width: '12vh',
+                                fontSize: '1.25vh'
+                            }}
+                        >
+                            Deposit
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            color="warning"
+                            className={styles.actionButton}
+                            onClick={() => props.setWithdrawModal(true)}
+                            style={{
+                                height: '3.5vh',
+                                width: '12vh',
+                                fontSize: '1.25vh'
+                            }}
+                        >
+                            Withdraw
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            className={styles.actionButton}
+                            onClick={() => props.setTransferModal(true)}
+                            style={{
+                                height: '3.5vh',
+                                width: '12vh',
+                                fontSize: '1.25vh'
+                            }}
+                        >
+                            Transfer
+                        </Button>
+                    </ButtonGroup>
+                </div>
+            }
 
             {Loading &&
                 <div
@@ -81,7 +110,7 @@ export const Transactions: React.FC = () => {
 
             {!Loading &&
                 <>
-                    {PlaceholderTransactions.map((data, index) => {
+                    {Transactions.map((data, index) => {
                         if (TransactionsToLoad > index) {
                             return (
                                 <TransactionsItem
@@ -92,7 +121,7 @@ export const Transactions: React.FC = () => {
                         }
                     })}
 
-                    {PlaceholderTransactions.length > TransactionsToLoad &&
+                    {Transactions.length > TransactionsToLoad &&
                         <Button
                             className={styles.moreButton}
                             variant={'contained'}
@@ -102,6 +131,16 @@ export const Transactions: React.FC = () => {
                         </Button>
                     }
                 </>
+            }
+
+            {!Loading && Transactions.length < 1 &&
+                <div
+                    className={styles.noTransactions}
+                >
+                    <SentimentSatisfied
+                    />
+                    <Typography component={'h1'}>No Transactions Found.</Typography>
+                </div>
             }
         </div>
     )

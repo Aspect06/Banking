@@ -12,12 +12,10 @@ export const Sidebar: React.FC<{
 
     setAccountCreationModalState: any
 
-    setDepositModalState: any
-    setWithdrawModalState: any
-    setTransferModalState: any
-
     CharacterData: any
     setCharacterData: any
+    
+    setDeleteAccount: any 
 }> = (props) => {
     return (
         <>
@@ -33,15 +31,24 @@ export const Sidebar: React.FC<{
                             display: 'flex',
                             marginLeft: '32.5vh',
                             zIndex: '1',
-                            bottom: '3vh'
+                            bottom: '3vh',
                         }}
                     >
                         <Fab
                             color="success"
                             aria-label="add"
                             onClick={() => props.setAccountCreationModalState(true)}
+                            disabled={props.CharacterData.savingsAvailable}
+                            style={{
+                                height: '5vh',
+                                width: '5vh',
+                            }}
                         >
-                            <AddIcon />
+                            <AddIcon
+                                style={{
+                                    fontSize: '2vh'
+                                }}
+                            />
                         </Fab>
                     </div>
                 </Tooltip>
@@ -58,12 +65,10 @@ export const Sidebar: React.FC<{
                             accountType={data.accountType}
                             accountName={data.name}
                             accountBalance={data.balance}
-                            setDepositModal={props.setDepositModalState}
-                            setWithdrawModal={props.setWithdrawModalState}
-                            setTransferModal={props.setTransferModalState}
                             selectedAccount={props.selectedAccount}
                             CharacterData={props.CharacterData}
                             setCharacterData={props.setCharacterData}
+                            setDeleteAccount={props.setDeleteAccount}
                         />
                     )
                 })}

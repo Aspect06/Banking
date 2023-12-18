@@ -1,18 +1,15 @@
 import React from 'react'
 import styles from '../Modal.module.scss'
-
 import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typography, Zoom } from '@mui/material';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
-import { fetchNui } from '../../../../../hooks/fetchNui';
 
-export const AccountCreation: React.FC<{
+export const DeleteAccount: React.FC<{
     modalOpen: boolean;
     setModalOpen: any
 }> = (props) => {
     const [Loading, setLoading] = React.useState(false);
-    const [AccountName, setAccountName] = React.useState('');
 
     return (
         <Zoom
@@ -21,34 +18,30 @@ export const AccountCreation: React.FC<{
         >
             <div
                 className={styles.Wrapper}
+                style={{
+                    height: '20vh'
+                }}
             >
                 {!Loading &&
                     <>
                         <Typography
                             className={styles.ModalHeader}
                         >
-                            Create Savings Account
+                            Delete Account
                         </Typography>
 
-                        <TextField
-                            id="outlined-basic"
-                            label="Account Name"
-                            variant="outlined"
-                            value={AccountName}
-                            onChange={(e) => {
-                                setAccountName(e.target.value)
-                            }}
-
-                            style={{
-                                marginTop: '9vh',
-                                width: '32.5vw',
-                                left: '2vh'
-                            }}
-                        />
+                        <Typography className={styles.areYouSure}>
+                            Are you sure you want to delete this account ?
+                        </Typography>
 
                         <div>
-                            <div
+                            <div 
                                 className={styles.ButtonContainer}
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '0.5vh',
+                                    right: '0vh'
+                                }}
                             >
                                 <ButtonGroup>
                                     <Button
@@ -56,7 +49,6 @@ export const AccountCreation: React.FC<{
                                         color="error"
                                         onClick={() => {
                                             props.setModalOpen(false);
-                                            setAccountName('');
                                         }}
                                     >
                                         Cancel
@@ -70,13 +62,10 @@ export const AccountCreation: React.FC<{
                                             setTimeout(() => {
                                                 props.setModalOpen(false);
                                                 setLoading(false);
-                                                fetchNui('createSavings', {
-                                                    Name: AccountName
-                                                })
-                                            }, 1000)
+                                            }, 1500)
                                         }}
                                     >
-                                        Create
+                                        Delete
                                     </Button>
                                 </ButtonGroup>
                             </div>
@@ -89,7 +78,7 @@ export const AccountCreation: React.FC<{
                         style={{
                             display: 'flex',
                             justifyContent: 'center',
-                            marginTop: '3.5%'
+                            marginTop: '8%'
                         }}
                     >
                         <div>

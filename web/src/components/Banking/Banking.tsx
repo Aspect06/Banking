@@ -12,7 +12,12 @@ import { AccountCreation } from './Components/Modals/AccountCreation/AccountCrea
 import { DepositModal } from './Components/Modals/Deposit/DepositModal'; 
 import { WithdrawModal } from './Components/Modals/Withdraw/WithdrawModal';
 import { TransferModal } from './Components/Modals/Transfer/TransferModal';
+import { DeleteAccount } from './Components/Modals/DeleteAccount/DeleteAccount'
+
 import { Transactions } from './Components/Transactions/Transactions';
+
+import { useNuiEvent } from '../../hooks/useNuiEvent';
+import { fetchNui } from '../../hooks/fetchNui';
 
 export const Banking: React.FC = () => {
     const [Open, setOpen] = React.useState(true);
@@ -20,13 +25,18 @@ export const Banking: React.FC = () => {
     const [DepositModalOpen, setDepositModalOpen] = React.useState(false);
     const [WithdrawModalOpen, setWithdrawModalOpen] = React.useState(false);
     const [TransferModalOpen, setTransferModalOpen] = React.useState(false);
-    const [AccountCreationModalOpen, setAccountCreationModalOpen] = React.useState(false)
+    const [DeleteAccountModal, setDeleteAccountModal] = React.useState(false);
+    const [AccountCreationModalOpen, setAccountCreationModalOpen] = React.useState(false);
 
     const [CharacterData, setCharacterData] = React.useState({
         Name: 'Aspect Dev',
         StateId: 1,
         Cash: 250,
-        selectedAccount: 1,
+        savingsAvailable: false,
+        selectedAccount: {
+            accountId: 1,
+            accountType: 'Personal Account',
+        },
         Accounts: [
             {
                 accountId: 1,
@@ -36,7 +46,7 @@ export const Banking: React.FC = () => {
             },
             {
                 accountId: 2,
-                accountType: 'Savings',
+                accountType: 'Savings Account',
                 name: 'Big Booty Latinas',
                 balance: 25000
             },
@@ -53,6 +63,29 @@ export const Banking: React.FC = () => {
                 balance: 125000
             },
         ],
+    })
+
+    React.useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setOpen(false);
+                fetchNui("Banking:Close");
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        }
+    }, [])
+
+    useNuiEvent('Banking:setCharacterData', (data) => {
+        setCharacterData(data)
+    })
+
+    useNuiEvent('Banking:Open', () => {
+        setOpen(true)
     })
 
     return (
@@ -79,16 +112,18 @@ export const Banking: React.FC = () => {
 
                         setAccountCreationModalState={setAccountCreationModalOpen}
                         
-                        setDepositModalState={setDepositModalOpen}
-                        setWithdrawModalState={setWithdrawModalOpen}
-                        setTransferModalState={setTransferModalOpen}
-                        
                         CharacterData={CharacterData}
                         setCharacterData={setCharacterData}
+
+                        setDeleteAccount={setDeleteAccountModal}
                     />
                 </div>
 
-                <Transactions />
+                <Transactions
+                    setDepositModal={setDepositModalOpen}
+                    setWithdrawModal={setWithdrawModalOpen}
+                    setTransferModal={setTransferModalOpen}
+                />
                 
                 <AccountCreation
                     modalOpen={AccountCreationModalOpen}
@@ -108,6 +143,11 @@ export const Banking: React.FC = () => {
                 <TransferModal
                     modalOpen={TransferModalOpen}
                     setModalOpen={setTransferModalOpen}
+                />
+
+                <DeleteAccount
+                    modalOpen={DeleteAccountModal}
+                    setModalOpen={setDeleteAccountModal}
                 />
             </div>
         </Zoom>

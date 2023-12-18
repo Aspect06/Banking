@@ -22,4 +22,21 @@
         top: 2vh;
         margin-left: 50vh
     }
+
+    .noTransactions {
+        user-select: none;
+
+        h1 {
+            text-align: center;
+            color: rgb(194, 194, 194);
+            font-size: 5vh;
+        }
+
+        svg {
+           margin-top: 17.5vh;
+           color: rgb(184, 184, 184);
+           margin-left: 45%;
+           font-size: 10vh;
+        }
+    }
 }

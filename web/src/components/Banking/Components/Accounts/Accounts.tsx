@@ -28,6 +28,7 @@ export const Accounts: React.FC<{
                     Name: props.CharacterData.Name,
                     StateId: props.CharacterData.StateId,
                     Cash: props.CharacterData.Cash,
+                    savingsAvailable: props.CharacterData.savingsAvailable,
                     selectedAccount: {
                         accountId: props.accountId,
                         accountType: props.accountType

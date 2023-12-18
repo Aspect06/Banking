@@ -11,7 +11,7 @@ RPC.register('Banking:getTransactions', function(source, Array)
 
         for k, v in ipairs(json.decode(Character[1].Transactions)) do
             table.insert(Transactions, {
-                Account = 'Personal Account',
+                Account = v.Account,
                 Amount = v.Amount,
                 Comment = v.Comment,
                 Date = v.Date,
@@ -27,7 +27,7 @@ RPC.register('Banking:getTransactions', function(source, Array)
 
         for k, v in ipairs(json.decode(Savings[1].account_transactions)) do
             table.insert(Transactions, {
-                Account = 'Savings',
+                Account = v.Account,
                 Amount = v.Amount,
                 Comment = v.Comment,
                 Date = v.Date,

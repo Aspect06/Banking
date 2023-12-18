@@ -22,7 +22,7 @@ export const Sidebar: React.FC<{
         <>
             <div>
                 <Tooltip
-                    title={!props.CharacterData.savingsAvailable ? 'Create Savings Account' : 'You are not eligable to another savings account.'}
+                    title={!props.CharacterData.savingsAvailable ? 'Create Savings Account' : 'You are not eligible to another savings account.'}
                     placement={'right'}
                     arrow
                 >

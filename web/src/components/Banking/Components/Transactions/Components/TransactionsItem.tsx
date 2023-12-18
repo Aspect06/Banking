@@ -33,14 +33,14 @@ export const TransactionsItem: React.FC<{
 
                 <div
                     style={{
-                        color: 'green',
+                        color: props.Transaction.Withdraw ? 'red' : 'green',
                         paddingTop: '1vh',
                     }}
                 >
                     <FontAwesomeIcon
                         icon={faMoneyBill}
                         style={{
-                            color: 'green',
+                            color: props.Transaction.Withdraw ? 'red' : 'green',
                             fontSize: '2vh',
                             marginTop: '1vh',
                             marginLeft: '1vh',
@@ -60,7 +60,7 @@ export const TransactionsItem: React.FC<{
                         textShadow: '2px 2px 2px rgba(0, 0, 0, 0.426)'
                     }}
                 >
-                    {Date()}
+                    {props.Transaction.Date}
                 </div>
 
                 <div

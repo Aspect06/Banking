@@ -91,7 +91,9 @@ export const Banking: React.FC = () => {
     })
 
     useNuiEvent('Banking:Open', () => {
-        setOpen(true)
+        setOpen(true);
+
+        fetchNui('Banking:Opened')
     })
 
     return (
@@ -183,6 +185,7 @@ export const Banking: React.FC = () => {
                     <WithdrawModal
                         modalOpen={WithdrawModalOpen}
                         setModalOpen={setWithdrawModalOpen}
+                        selectedAccount={CharacterData.selectedAccount}
                     />
 
                     <TransferModal

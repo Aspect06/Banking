@@ -18,13 +18,24 @@ NUI = {
             },
             Accounts = Accounts.getAccounts(),
         })
-        Callbacks.getPersonalTransactions();
+
+        Callbacks.SwitchAccount({
+            AccountId = exports['Framework']:getCid(),
+            AccountType = 'Personal Account'
+        });
     end,
 
     OpenBanking = function()
-        NUI.GetData();
-        NUI.SendReactMessage('Banking:Open');
-        SetNuiFocus(true, true)
+        local Finished = exports['Taskbar']:TaskBar({
+            length = 5000,
+            text = 'Opening Banking...'
+        })
+
+        if Finished then
+            NUI.GetData();
+            NUI.SendReactMessage('Banking:Open');
+            SetNuiFocus(true, true);
+        end
     end,
 
     CloseBanking = function()

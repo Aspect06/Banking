@@ -13,11 +13,11 @@ RPC.register('Banking:getTransactions', function(source, Array)
             table.insert(Transactions, {
                 Account = 'Personal Account',
                 Amount = v.Amount,
-                Comment = v.Comment
+                Comment = v.Comment,
+                Date = v.Date,
+                Withdraw = v.Withdraw
             })
         end
-
-        return Transactions
     end
 
     if Array.Account == 'Savings Account' then
@@ -29,10 +29,22 @@ RPC.register('Banking:getTransactions', function(source, Array)
             table.insert(Transactions, {
                 Account = 'Savings',
                 Amount = v.Amount,
-                Comment = v.Comment
+                Comment = v.Comment,
+                Date = v.Date,
+                Withdraw = v.Withdraw
             })
         end
-
-        return Transactions
     end
+
+    return ReverseTable(Transactions)
 end)
+
+ReverseTable = function(ReverseText)
+    local reversedTable = {}
+
+    for k, v in ipairs(ReverseText) do
+        reversedTable[#ReverseText + 1 - k] = v
+    end
+
+    return reversedTable
+end

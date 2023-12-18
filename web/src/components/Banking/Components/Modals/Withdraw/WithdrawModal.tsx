@@ -4,10 +4,12 @@ import { Button, ButtonGroup, CircularProgress, InputAdornment, TextField, Typog
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { fetchNui } from '../../../../../hooks/fetchNui';
 
 export const WithdrawModal: React.FC<{
     modalOpen: boolean;
     setModalOpen: any
+    selectedAccount: any
 }> = (props) => {
     const [Loading, setLoading] = React.useState(false);
 
@@ -93,6 +95,15 @@ export const WithdrawModal: React.FC<{
                                         setTimeout(() => {
                                             props.setModalOpen(false);
                                             setLoading(false);
+                                            fetchNui('Banking:withdrawMoney', {
+                                                accountId: props.selectedAccount.accountId,
+                                                Account: props.selectedAccount.accountType,
+                                                Amount: Amount,
+                                                Comment: Comment,
+                                                Date: Date(),
+                                            })
+                                            setAmount(0);
+                                            setComment('');
                                         }, 1500)
                                     }}
                                 >

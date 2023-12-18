@@ -4,12 +4,6 @@ Callbacks = {
             Transactions = RPC.execute('Banking:getTransactions', {Account = data.AccountType, Id = data.AccountId})
         })
     end,
-
-    getPersonalTransactions = function()
-        NUI.SendReactMessage('Transactions:setTransactions', {
-            Transactions = RPC.execute('Banking:getTransactions', {Account = 'Personal Account'})
-        })
-    end,
 }
 
 RegisterNUICallback('swapAccount', function(DATA)
@@ -46,4 +40,11 @@ end)
 
 RegisterNUICallback('Banking:transferMoney', function(DATA)
     Actions.Transfer(DATA)
+end)
+
+RegisterNUICallback('Banking:Opened', function()
+    Callbacks.SwitchAccount({
+        AccountId = exports['Framework']:getCid(),
+        AccountType = 'Personal Account'
+    });
 end)

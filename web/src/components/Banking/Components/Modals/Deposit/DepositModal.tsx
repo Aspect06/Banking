@@ -99,8 +99,14 @@ export const DepositModal: React.FC<{
                                                     setLoading(false);
                                                     fetchNui('Banking:depositMoney', {
                                                         accountId: props.selectedAccount.accountId,
-                                                        accountType: props.selectedAccount.accountType
+                                                        Account: props.selectedAccount.accountType,
+                                                        Amount: Amount,
+                                                        Comment: Comment,
+                                                        Date: Date(),
                                                     })
+
+                                                    setAmount(0);
+                                                    setComment('');
                                                 }, 250)
                                             }, 1500)
                                         }}
